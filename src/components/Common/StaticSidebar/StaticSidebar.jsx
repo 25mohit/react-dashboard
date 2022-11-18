@@ -8,6 +8,7 @@ import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import { FaStickyNote, FaUserAlt } from "react-icons/fa"
 import { MdAccountBalance, MdEdit, MdEmail } from "react-icons/md"
 import { BsFillArrowRightCircleFill, BsFillCartCheckFill, BsFillHandbagFill, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
+import { Link } from 'react-router-dom'
 
 const StaticSidebar = () => {
   return (
@@ -72,7 +73,7 @@ const StaticSidebar = () => {
               <div className="menu">
                   <div>
                       <MdEmail id='icon'/>
-                      <h4>Inbox</h4>
+                      <h4><Link to='/email'>Inbox</Link></h4>
                   </div>
                   <div>
                       <BsFillArrowRightCircleFill id='icon'/>

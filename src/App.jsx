@@ -4,25 +4,27 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import MainBody from './components/Common/Layout/MainBody/MainBody'
 import StaticSidebar from './components/Common/StaticSidebar/StaticSidebar'
 import videoBG from './assets/Background/backgound_video.mp4'
+import EmailUI from './components/EmailUI/EmailUI'
 
 function App() {
 
   return (
     <Router>
-      {/* <div className="top"> */}
-      <div className="top">
-        <video src={videoBG} autoPlay muted loop/></div>
+        <div className="top">
+              <video src={videoBG} autoPlay muted loop/>
+        </div>
         <div className="main">
               <div className="sidebar-main">
                   <StaticSidebar />
               </div>
-              <Routes>
-                  <Route path='/' exact element={<MainBody />}>
-
-                  </Route>
-              </Routes>
+              <div className="body-main">
+                  <Routes>
+                        <Route path='/' >
+                            <Route path='email' exact element={<EmailUI />} />
+                        </Route>
+                  </Routes>
+              </div>
         </div>
-        {/* </div> */}
     </Router>
   )
 }

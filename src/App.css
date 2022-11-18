@@ -1,7 +1,9 @@
 p, h1, h2, h3, h4, h5, h6{
     margin: 0;
     font-family: 'Raleway', sans-serif;
-
+}
+span{
+  font-family: Arial, Helvetica, sans-serif;
 }
 .top{
   background-color: red;
@@ -16,8 +18,9 @@ video{
   object-fit: cover;
 }
 /* width */
-.static-sidebar::-webkit-scrollbar {
-    width: 7px;
+.static-sidebar::-webkit-scrollbar , .inbox .container::-webkit-scrollbar{
+    /* width: 7px; */
+    scroll-behavior: smooth;
     display: none;
   }
   

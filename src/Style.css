@@ -13,11 +13,21 @@
     width: 20rem;
     padding: 0.5rem;
 }
-
+.body-main{
+    width: 100%;
+    padding: 0.5rem;
+}
+.body-main-ui{
+    height: 100%;
+    border-radius: 25px;
+    padding:1.2rem 0.5rem;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
+}
 /* STATIC SIDEBAR  */
 .static-sidebar{
     border-radius: 25px;
-    background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.4));
+    background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
     max-height: 100%;
     overflow-y: auto;
     height: 100%;
@@ -31,7 +41,7 @@
     align-items: center;
     padding:1.2rem 0.7rem;
     box-sizing: border-box;
-    border-bottom: 1px solid rgb(81, 81, 81);
+    border-bottom: 1px solid rgba(81, 81, 81,0.3);
 }
 .profile > div:nth-child(1) img{
     width: 50px;
@@ -50,7 +60,7 @@
     padding: 1.5rem 0.7rem;
     flex-direction: column;
     /* background-color: white; */
-    border-bottom: 1px solid rgb(81, 81, 81);
+    border-bottom: 1px solid rgba(81, 81, 81,0.3);
     gap: 1rem;
 }
 .static-sidebar .section .head{
@@ -92,4 +102,93 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+/* EMAIL SECTION */
+.email-main{
+    padding:0 0.7rem;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+.inbox{
+    width: 29%;
+    /* overflow: hidden; */
+    /* background-color: red; */
+    /* padding:0.7rem; */
+    box-sizing: border-box;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.inbox .search input[type='text']{
+    background-color: rgb(240, 239, 239);
+    padding: 0.5rem 0;
+    /* padding-left: 0.7rem; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 7px;
+    border: 1.5px solid rgb(181, 181, 181);
+    width: 100%;
+    outline: none;
+}
+.inbox .search input[type='text']::placeholder{
+    padding-left: 0.4rem;
+    color: rgb(180, 180, 180);
+}
+.inbox .container{
+    height: 100%;
+    overflow-y: auto;
+    margin-top: 0.9rem;
+}
+.inbox .container > div{
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0;
+    padding-left: 0.3rem;
+    margin-bottom: 0.6rem;
+    justify-content: space-between;
+}
+
+.inbox .container  .notify{
+    color: rgb(71, 71, 255) !important;
+    font-weight: 600;
+}
+.inbox .container > .active{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255,0.5);
+    border-radius: 10px 10px 10px 10px;
+}
+.inbox .container > div:hover{
+    background-color: rgba(255, 255, 255,0.5);
+    cursor: pointer;
+    border-radius: 2px 2px 2px 2px;
+    transition: 0.5s;
+}
+.inbox .container > div >:nth-child(1){
+    display: flex;
+    align-items: center;
+}
+.inbox .container > div >:nth-child(1) img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+.inbox .container > div >:nth-child(1) >div{
+    margin-left: 0.8rem;
+}
+.inbox .container > div >:nth-child(1) >div p{
+    font-weight: 600;
+    color: rgb(67, 67, 67);
+}
+.inbox .container > div >:nth-child(1) >div span{
+    font-size: 0.8rem;
+    color: rgb(99, 99, 99);
+}
+.detail{
+    background-color: green;
+    width: 69%;
+    border-radius: 25px;
+    padding:0.7rem;
+    box-sizing: border-box;
 }
