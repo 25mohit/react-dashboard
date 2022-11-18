@@ -10,11 +10,11 @@
     display: flex;
 }
 .sidebar-main{
-    width: 20rem;
+    width: 19%;
     padding: 0.5rem;
 }
 .body-main{
-    width: 100%;
+    width: 81%;
     padding: 0.5rem;
 }
 .body-main-ui{
