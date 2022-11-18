@@ -9,7 +9,9 @@ function App() {
 
   return (
     <Router>
-        <video src={videoBG} autoPlay muted loop/>
+      {/* <div className="top"> */}
+      <div className="top">
+        <video src={videoBG} autoPlay muted loop/></div>
         <div className="main">
               <div className="sidebar-main">
                   <StaticSidebar />
@@ -20,6 +22,7 @@ function App() {
                   </Route>
               </Routes>
         </div>
+        {/* </div> */}
     </Router>
   )
 }
