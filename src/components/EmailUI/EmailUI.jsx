@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MainBody from '../Common/Layout/MainBody/MainBody'
-import logo from '../../assets/Images/Admin/AdminLogo.jpg'
+// import logo from '../../assets/Images/Admin/AdminLogo.jpg'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import {EMAIL_MOC_DATA}  from '../../MocData/Email/EMAIL_MOC_DATA'
 
@@ -18,7 +18,6 @@ const EmailUI = () => {
         setFilteredEmail(filter)
     },[search])
 
-    console.log("asdasd", filteredEmail);
     const onChangeHandler = e => {
         setSearch(e.target.value)
     }
