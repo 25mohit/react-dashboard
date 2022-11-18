@@ -41,14 +41,19 @@ const EmailUI = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <BsThreeDotsVertical />
+                                        <div>
+                                       {data.notification !== '' ? <span>{data.notification}</span> : null}
+                                            <BsThreeDotsVertical />
+                                        </div>
                                     </div>
                             </div>)
                         }
                     </div>
             </div>
-            <div className="detail">
-                    asds
+            <div className="detail empty">
+                    <div>
+                        <h1> welcome to your personalise inbox </h1>
+                    </div>
             </div>
     </div>
     </MainBody>

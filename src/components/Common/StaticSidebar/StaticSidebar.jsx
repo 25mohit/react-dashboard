@@ -73,7 +73,7 @@ const StaticSidebar = () => {
               <div className="menu">
                   <div>
                       <MdEmail id='icon'/>
-                      <h4><Link to='/email'>Inbox</Link></h4>
+                      <h4><Link to='/email'>Email</Link></h4>
                   </div>
                   <div>
                       <BsFillArrowRightCircleFill id='icon'/>

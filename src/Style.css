@@ -185,10 +185,31 @@
     font-size: 0.8rem;
     color: rgb(99, 99, 99);
 }
+.inbox .container > div >:nth-child(2){
+    display: flex !important;
+    align-items: center !important;
+}
+.inbox .container > div >:nth-child(2) span{
+    background-color: rgb(40, 40, 248);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+}
 .detail{
-    background-color: green;
+    /* background-color: green; */
     width: 69%;
     border-radius: 25px;
     padding:0.7rem;
     box-sizing: border-box;
+}
+.empty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.empty h1{
+    color: rgb(118, 118, 118);
+    user-select: none;
+    cursor: pointer;
 }
