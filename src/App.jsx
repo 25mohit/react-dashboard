@@ -5,8 +5,10 @@ import MainBody from './components/Common/Layout/MainBody/MainBody'
 import StaticSidebar from './components/Common/StaticSidebar/StaticSidebar'
 import videoBG from './assets/Background/backgound_video.mp4'
 import EmailUI from './components/EmailUI/EmailUI'
+import { useState } from 'react'
 
 function App() {
+  const [toogleSidebar, setToogleSidebar] = useState(false)
 
   return (
     <Router>
@@ -14,10 +16,10 @@ function App() {
               <video src={videoBG} autoPlay muted loop/>
         </div>
         <div className="main">
-              <div className="sidebar-main">
+              { !toogleSidebar && <div className="sidebar-main">
                   <StaticSidebar />
-              </div>
-              <div className="body-main">
+              </div> }
+              <div className={toogleSidebar ? 'full-width' : 'body-main'}>
                   <Routes>
                         <Route path='/' >
                             <Route path='email' exact element={<EmailUI />} />
