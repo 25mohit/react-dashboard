@@ -11,6 +11,7 @@ const EmailUI = () => {
 
     const toogle = (index) => {
         setIndx(index)
+        // return null
     }
 
     useEffect(() => {
