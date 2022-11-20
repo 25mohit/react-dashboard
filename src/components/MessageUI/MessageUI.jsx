@@ -56,7 +56,9 @@ const MessageUI = () => {
     },[])
 
     useEffect(() => {
-        setNewArr([...newArr, newMessage])
+        if(newArr.length > 0){
+            setNewArr([...newArr, newMessage])
+        }
     },[newMessage])
     
     const sendMessage = () => {
@@ -119,7 +121,6 @@ const MessageUI = () => {
                                 <TbPhoneCall id='chat-icons'/>
                             </div>
                         </div>
-                        {/* <div className="body"> */}
                             <div className="chat-container">
                                 {
                                     newArr.map((chat, i) => 
@@ -128,7 +129,6 @@ const MessageUI = () => {
                                     </div>)
                                 }
                             </div>
-                        {/* </div> */}
                             <div className='send-input'>
                                     <input type="text" value={message} name='message' onChange={changeMessage}/>
                                     <RiSendPlaneFill id='send-icon' onClick={sendMessage}/>
