@@ -8,7 +8,7 @@ import MessageUI from './components/MessageUI/MessageUI'
 import { useState } from 'react'
 
 function App() {
-  const [toogleSidebar, setToogleSidebar] = useState(true)
+  const [toogleSidebar, setToogleSidebar] = useState(false)
 
   return (
     <Router>
