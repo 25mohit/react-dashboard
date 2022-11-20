@@ -7,23 +7,23 @@ import User6 from '../MocData/Email/UserImages/user_1.jpg'
 
 const EMAIL_MOC_DATA = [
 { id: 11, image: User1, name: 'Harshka Agarwal', ago: 'Now', message: 'whats your current status', notification: '03'},
-{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: '0'},
-{ id: 13, image: User3, name: 'Harry Agarwal', ago: '6m', message: 'whats your current status', notification: '0'},
+{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: ''},
+{ id: 13, image: User3, name: 'Harry Agarwal', ago: '6m', message: 'whats your current status', notification: ''},
 { id: 14, image: User4, name: 'Ron Agarwal', ago: '1w', message: 'whats your current status', notification: '15'},
 { id: 15, image: User5, name: 'Shakira Agarwal', ago: '2m', message: 'whats your current status', notification: '11'},
 { id: 11, image: User1, name: 'Harshka Agarwal', ago: 'Now', message: 'whats your current status', notification: '03'},
-{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: '0'},
+{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: ''},
 { id: 11, image: User1, name: 'Harshka Agarwal', ago: 'Now', message: 'whats your current status', notification: '03'},
-{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: '0'},
-{ id: 13, image: User3, name: 'Harry Agarwal', ago: '6m', message: 'whats your current status', notification: '0'},
+{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: ''},
+{ id: 13, image: User3, name: 'Harry Agarwal', ago: '6m', message: 'whats your current status', notification: ''},
 { id: 14, image: User4, name: 'Ron Agarwal', ago: '1w', message: 'whats your current status', notification: '15'},
 { id: 15, image: User5, name: 'Shakira Agarwal', ago: '2m', message: 'whats your current status', notification: '11'},
 { id: 11, image: User1, name: 'Harshka Agarwal', ago: 'Now', message: 'whats your current status', notification: '03'},
-{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: '0'},
-{ id: 13, image: User3, name: 'Harry Agarwal', ago: '6m', message: 'whats your current status', notification: '0'},
+{ id: 12, image: User2, name: 'Peter Agarwal', ago: '5m', message: 'whats your current status', notification: ''},
+{ id: 13, image: User3, name: 'Harry Agarwal', ago: '6m', message: 'whats your current status', notification: ''},
 { id: 14, image: User4, name: 'Ron Agarwal', ago: '1w', message: 'whats your current status', notification: '15'},
 { id: 15, image: User5, name: 'Shakira Agarwal', ago: '2m', message: 'whats your current status', notification: '11'},
-{ id: 16, image: User6, name: 'Tayler Swift', ago: 'Now', message: 'whats your current status', notification: '0'}
+{ id: 16, image: User6, name: 'Tayler Swift', ago: 'Now', message: 'whats your current status', notification: ''}
 ]
 
 export default EMAIL_MOC_DATA

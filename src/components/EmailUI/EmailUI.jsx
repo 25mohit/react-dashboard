@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import MainBody from '../Common/Layout/MainBody/MainBody'
 // import logo from '../../assets/Images/Admin/AdminLogo.jpg'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import { BiError } from 'react-icons/bi'
 import EMAIL_MOC_DATA from '../../MocData/EMAIL_MOC_DATA.JS'
 // EMAIL_MOC_DATA
 
 const EmailUI = () => {
     const [search, setSearch] = useState('')
+    const [empty, setEmpty] = useState(false)
     const [filteredEmail, setFilteredEmail] = useState([])
     const [idx, setIndx] = useState(null)
 
@@ -18,6 +20,11 @@ const EmailUI = () => {
     useEffect(() => {
         const filter = EMAIL_MOC_DATA.filter(data => data.name.toLowerCase().includes(search.toLowerCase()))
         setFilteredEmail(filter)
+        if(filter.length == 0) {
+            setEmpty(true)
+        } else {
+            setEmpty(false)
+        }
     },[search])
 
     const onChangeHandler = e => {
@@ -49,6 +56,10 @@ const EmailUI = () => {
                                     </div>
                             </div>)
                         }
+                        { empty && <div className="no-record">
+                                        <BiError id='no-record'/>
+                                        <h2>No Record Found !</h2> 
+                                    </div>}
                     </div>
             </div>
             <div className="detail empty">
