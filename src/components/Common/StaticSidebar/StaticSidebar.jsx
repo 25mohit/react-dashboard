@@ -1,12 +1,12 @@
 import React from 'react'
 import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
-import { RiDashboardFill, RiSettings4Fill } from "react-icons/ri"
+import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SiJirasoftware } from "react-icons/si"
 import { FiSlack } from "react-icons/fi"
 import { GoSettings } from "react-icons/go"
 import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import { FaStickyNote, FaUserAlt } from "react-icons/fa"
-import { MdAccountBalance, MdEdit, MdEmail } from "react-icons/md"
+import { MdAccountBalance, MdEdit } from "react-icons/md"
 import { BsFillArrowRightCircleFill, BsFillCartCheckFill, BsFillHandbagFill, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 import { Link } from 'react-router-dom'
 
@@ -72,8 +72,8 @@ const StaticSidebar = () => {
               </div>
               <div className="menu">
                   <div>
-                      <MdEmail id='icon'/>
-                      <h4><Link to='/email'>Email</Link></h4>
+                      <RiMessage2Fill id='icon'/>
+                      <h4><Link to='/message'>Message</Link></h4>
                   </div>
                   <div>
                       <BsFillArrowRightCircleFill id='icon'/>

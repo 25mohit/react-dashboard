@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import MainBody from './components/Common/Layout/MainBody/MainBody'
 import StaticSidebar from './components/Common/StaticSidebar/StaticSidebar'
 import videoBG from './assets/Background/backgound_video.mp4'
-import EmailUI from './components/EmailUI/EmailUI'
+import MessageUI from './components/MessageUI/MessageUI'
 import { useState } from 'react'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
               <div className={toogleSidebar ? 'full-width' : 'body-main'}>
                   <Routes>
                         <Route path='/' >
-                            <Route path='email' exact element={<EmailUI />} />
+                            <Route path='message' exact element={<MessageUI />} />
                         </Route>
                   </Routes>
               </div>
