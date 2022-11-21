@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
 import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SiJirasoftware } from "react-icons/si"
@@ -7,10 +7,21 @@ import { GoSettings } from "react-icons/go"
 import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import { FaStickyNote, FaUserAlt } from "react-icons/fa"
 import { MdAccountBalance, MdEdit } from "react-icons/md"
-import { BsFillArrowRightCircleFill, BsFillCartCheckFill, BsFillHandbagFill, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
+import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillCartCheckFill, BsFillHandbagFill, BsFolderMinus, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 import { Link } from 'react-router-dom'
 
 const StaticSidebar = () => {
+const [toogleOption, setToogleOption] = useState({
+    items:false,
+    sales:false,
+})
+
+const allToogleOff = () => {
+    setToogleOption({
+        items:false,
+        sales:false,
+    })
+}
   return (
     <div className='static-sidebar'>
         <div className="profile">
@@ -25,66 +36,100 @@ const StaticSidebar = () => {
         <div className="section">
               <div className="head">
                   <span>Menu: <strong>6</strong></span>
+                  <span><BsFolderMinus id='toogle-all' onClick={allToogleOff}/></span>
               </div>
               <div className="menu">
-                  <div>
-                      <RiDashboardFill id='icon'/>
-                      <h4>Dashboard</h4>
-                  </div>
-                  <div>
-                  </div>
+                    <div>
+                        <div>
+                            <RiDashboardFill id='icon'/>
+                            <h4>Dashboard</h4>
+                        </div>
+                    </div>
+                    <div></div>
               </div>
               <div className="menu">
-                  <div>
-                      <BsListTask id='icon'/>
-                      <h4>My Project Task</h4>
-                  </div>
-                  <div>
-                      <BsFillArrowRightCircleFill id='icon'/>
-                  </div>
+                    <div>
+                        <div>
+                            <BsListTask id='icon'/>
+                            <h4>My Project Task</h4>
+                        </div>
+                        <div>
+                            <BsFillArrowRightCircleFill id='icon'/>
+                        </div>
+                    </div>
+                    <div></div>
               </div>
               <div className="menu">
-                  <div>
-                      <BsShop id='icon'/>
-                      <h4>Items</h4>
-                  </div>
-                  <div>
-                      <BsFillArrowRightCircleFill id='icon'/>
-                  </div>
+                    <div>
+                        <div>
+                            <BsFillHandbagFill id='icon'/>
+                            <h4>Sales</h4>
+                        </div>
+                        <div>
+                            { !toogleOption.sales ? 
+                                    <BsFillArrowRightCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, sales: true})}/> :
+                                    <BsFillArrowDownCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, sales: false})}/> }
+                        </div>
+                    </div>
+                    { toogleOption.sales && <div className="sub-menu">
+                            <h4>Orders</h4>
+                            <h4>Pending</h4>
+                            <h4>Completed</h4>
+                    </div> }
               </div>
               <div className="menu">
-                  <div>
-                      <BsFillCartCheckFill id='icon'/>
-                      <h4>Orders</h4>
-                  </div>
-                  <div>
-                      <BsFillArrowRightCircleFill id='icon'/>
-                  </div>
+                    <div>
+                        <div>
+                            <BsBell id='icon'/>
+                            <h4>Notification</h4>
+                        </div>
+                        <div>
+                            <p className="notify">5</p>
+                        </div>
+                    </div>
+                    <div></div>
               </div>
               <div className="menu">
-                  <div>
-                      <BsFillHandbagFill id='icon'/>
-                      <h4>Sales</h4>
-                  </div>
-                  <div>
-                      <BsFillArrowRightCircleFill id='icon'/>
-                  </div>
+                    <div>
+                        <div>
+                            <BsShop id='icon'/>
+                            <h4>Items</h4>
+                        </div>
+                        <div>
+                            { !toogleOption.items ? 
+                                    <BsFillArrowRightCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, items: true})}/> :
+                                    <BsFillArrowDownCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, items: false})}/> }
+                        </div>
+                    </div>
+                    { toogleOption.items && <div className="sub-menu">
+                            <h4><Link to='/items/listed-item'>Listed</Link></h4>
+                            <h4>Draft</h4>
+                            <h4>Scheduled</h4>
+                            <h4>Unsold</h4>
+                    </div> }
               </div>
               <div className="menu">
-                  <div>
-                      <RiMessage2Fill id='icon'/>
-                      <h4><Link to='/message'>Message</Link></h4>
-                  </div>
-                  <div>
-                      <BsFillArrowRightCircleFill id='icon'/>
-                  </div>
+                    <div>
+                        <div>
+                            <RiMessage2Fill id='icon'/>
+                            <h4><Link to='/message'>Message</Link></h4>
+                        </div>
+                        <div>
+                            <p className="notify">6</p>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
               </div>
               <div className="menu">
-                  <div>
-                      <MdAccountBalance id='icon'/>
-                      <h4>Account</h4>
-                  </div>
-                  <div />
+                    <div>
+                        <div>
+                            <MdAccountBalance id='icon'/>
+                            <h4>Account</h4>
+                        </div>
+                        <div />
+                    </div>
+                    <div></div>
               </div>
         </div>
         <div className="section">

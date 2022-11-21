@@ -34,6 +34,7 @@
     background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
     max-height: 100%;
     overflow-y: auto;
+    /* overflow-x: visible; */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -72,25 +73,68 @@
     align-items: center;
     justify-content: space-between;
 }
+.static-sidebar .section .head #toogle-all{
+    font-size: 1.1rem;
+}
+.static-sidebar .section .head #toogle-all:hover{
+    cursor: pointer;
+    transition: 0.6s;
+    color: rgb(173, 113, 0);
+}
 .menu{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 }
 .menu:hover{
     cursor: pointer;
 }
-.menu > div {
+.menu .notify{
+    background-color: red;
+    color: white;
+    padding: 0.2rem;
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    height: 1rem;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.menu .sub-menu{
+    display: flex;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    padding-left: 2rem;
+    box-sizing: border-box;
+}
+.menu .sub-menu h4{
+    margin: 0.4rem 0;
+    width: 100%;
+    text-align: left;
+    color: rgb(55, 55, 55);
+}
+.menu .sub-menu h4:hover{
+    color: black;
+}
+.menu > div  {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu > div > div {
     display: flex;
     align-items: center;
     gap: 0.7rem;
 }
-.menu > div #icon{
+.menu > div > div #icon{
     font-size: 1.3rem;
 }
 .static-sidebar .section .card{
     border-radius: 15px;
     padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
     gap: 1rem;
     box-sizing: border-box;
     display: flex;
@@ -100,6 +144,15 @@
     display: flex;
     align-items: center;
     gap: 0.7rem;
+    color: rgb(67, 67, 67);
+}
+
+.static-sidebar .section .card > div h3{
+    font-size: 1.1rem;
+}
+.static-sidebar .section .card > div h3:hover{
+    color: black;
+    cursor: pointer;
 }
 .static-sidebar .section .settings{
     display: flex;
@@ -355,4 +408,147 @@
 }
 .detail .container .send-input #send-icon:hover{
     cursor: pointer;
+}
+
+/* LISTED MAIN */
+.listed-main{
+    /* background-color: aqua; */
+    padding:0 0.7rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    justify-content: space-between;
+}
+.listed-main .header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.listed-main .header > div{
+    width: 20rem;
+    border-radius: 10PX;
+    box-shadow: 0px 0px 10px 2px rgba(124, 124, 124, 0.438);
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.listed-main .header > div h2{
+    font-size: 1.4rem;
+    color: rgb(238, 238, 238);
+}
+.listed-main .header > div > div{
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.listed-main .header > div > div p{
+    font-size: 1.5rem;
+    color: white;
+}
+.listed-main .header > div > div #card-icon{
+    font-size: 2rem;
+    color: rgb(216, 142, 3);
+}
+.listed-main .header > div > div #card-icon-3{
+    font-size: 2rem;
+    color: rgb(255, 0, 55);
+}
+.listed-main .header > div:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 12px 2px rgba(124, 123, 123, 0.737);
+    transition: 0.6s;
+}
+.listed-main .header > div:nth-child(1){
+    background-color: #fdab1d7c;
+    border: 1px solid #fdab1dc6;
+}
+.listed-main .header > div:nth-child(2){
+    background-color: #6975fe68;
+    border: 1px solid #6975feaf;
+}
+.listed-main .header > div:nth-child(3){
+    background-color: #ff898794;
+    border: 1px solid #ff8987d2;
+}
+.listed-main .container{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 0.6rem 0;
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+.listed-main .head{
+    display: flex;
+    margin: 1rem 0;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: rgba(205, 205, 205, 0.69);
+    gap: 1rem;
+    justify-content: left;
+    box-shadow: 0px 0px 10px 2px rgba(147, 147, 147, 0.438);
+}
+
+.listed-main .head > div{
+    padding: 0.4rem 0.7rem;
+    
+}
+.listed-main .head > div p{
+    color: #36363668;
+    font-size: 1rem;
+}
+.listed-main .head > div p:hover{
+    cursor: pointer;
+    user-select: none;
+}
+.listed-main .head .active{
+    background-color: rgba(255, 255, 255, 0.955);
+    border-radius: 10px;
+}
+.listed-main .head .active p{
+    color: black;
+}
+.listed-main .container .table{
+    max-height: 100%;
+    overflow: auto;
+}
+.listed-main .container .table table{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.589);
+    width: 100%;
+}
+/* .listed-main .container .table thead{
+    background-color: green;
+} */
+.listed-main .container .table thead tr td:nth-child(1){
+    width: 2rem;
+}
+.listed-main .container .table thead tr td:nth-child(2){
+    width: 4rem;
+}
+.listed-main .container .table thead tr td{
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.listed-main .container .table thead tr td p{
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}
+.listed-main .container .table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.596);
+}
+.listed-main .container .table tbody tr td{
+    padding: 0.7rem 0.5rem;
+}
+.listed-main .container .table tbody tr td select{
+    border: none;
 }
