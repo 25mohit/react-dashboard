@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
-import { BsFillCartCheckFill } from 'react-icons/bs'
+import { BsFillCartCheckFill, BsTrash } from 'react-icons/bs'
+import { AiFillEye } from 'react-icons/ai'
+import { FaRegEdit } from 'react-icons/fa'
 import { FcMoneyTransfer, FcSearch } from 'react-icons/fc'
 
 const ListedUI = () => {
@@ -68,6 +70,7 @@ const ListedUI = () => {
                                 <td><p>Size</p></td>
                                 <td><p>Price</p></td>
                                 <td><p>Qty.</p></td>
+                                <td><p>Actions</p></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -85,6 +88,11 @@ const ListedUI = () => {
                                     </p></td>
                                 <td><p>{data.price}</p></td>
                                 <td><p>{data.qty} Items</p></td>
+                                <td>
+                                    <AiFillEye id='table-action' className='show-icon'/>
+                                    <BsTrash id='table-action' className='delete-icon'/>
+                                    <FaRegEdit id='table-action' className='edit-icon'/>
+                                </td>
                             </tr> )}
                         </tbody>
                     </table>

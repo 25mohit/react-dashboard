@@ -549,6 +549,35 @@
 .listed-main .container .table tbody tr td{
     padding: 0.7rem 0.5rem;
 }
+.listed-main .container .table tbody tr td:nth-child(8) {
+    width: 10rem;
+}
+.listed-main .container .table tbody tr td:nth-child(8) #table-action{
+    /* background-color: red; */
+    font-size: 1.2rem;
+    margin: 0 0.4rem;
+}
+.delete-icon{
+    color: rgb(255, 104, 104);
+}
+.delete-icon:hover{
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+.edit-icon{
+    color: rgb(80, 156, 255);
+}
+.edit-icon:hover{
+    color: rgb(0, 110, 255);
+    cursor: pointer;
+}
+.show-icon{
+    color: rgb(47, 202, 60);
+}
+.show-icon:hover{
+    color: rgb(25, 164, 0);
+    cursor: pointer;
+}
 .listed-main .container .table tbody tr td select{
     border: none;
 }
