@@ -15,6 +15,8 @@ input[type=text], select, textarea{
   border: none;
   font-size: 1rem;
   letter-spacing: 1px;
+  color: rgb(79, 78, 78);
+  font-weight: 600;
   padding: 0.4rem 0.7rem;
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
@@ -35,26 +37,6 @@ textarea{
   resize: vertical;
   max-height: 35rem;
 }
-/* select{
-  border: none;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  padding: 0.4rem 0.7rem;
-  font-family: 'Raleway', sans-serif;
-  box-sizing: border-box;
-  margin-bottom: 0.5rem;
-  border: 3px solid rgba(255, 255, 255, 0.468);
-  border-radius: 10px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-select:focus{
-  border: 3px solid rgba(96, 59, 244, 0.71);
-}
-select::placeholder{
-  font-size: 0.8rem;
-} */
 button{
   border: none;
   border-radius: 10px;
@@ -87,7 +69,7 @@ video{
   object-fit: cover;
 }
 /* width */
-.static-sidebar::-webkit-scrollbar , .inbox .container::-webkit-scrollbar, .detail .container  .chat-container::-webkit-scrollbar , .listed-main .container .table::-webkit-scrollbar {
+.static-sidebar::-webkit-scrollbar ,.add-new-item .container::-webkit-scrollbar, .inbox .container::-webkit-scrollbar, .detail .container  .chat-container::-webkit-scrollbar , .listed-main .container .table::-webkit-scrollbar {
     /* width: 7px; */
     scroll-behavior: smooth;
     display: none;

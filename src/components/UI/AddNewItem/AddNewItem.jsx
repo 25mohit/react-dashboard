@@ -26,11 +26,15 @@ const AddNewItem = () => {
                 <div className="input-field-half">
                     <div>
                         <label htmlFor="">Category</label>
-                        <select name="" id=""></select>
+                        <select name="" id="">
+                            <option value="">Select Category</option>
+                        </select>
                     </div>
                     <div>
                         <label htmlFor="">Sub Category</label>
-                        <select name="" id=""></select>
+                        <select name="" id="">
+                            <option value="">Select Sub Category</option>
+                        </select>
                     </div>
                 </div>
                 <div className="input-field-full">
