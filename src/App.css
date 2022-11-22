@@ -1,4 +1,4 @@
-p, h1, h2, h3, h4, h5, h6{
+p, h1, h2, h3, h4, h5, h6, label{
     margin: 0;
     font-family: 'Raleway', sans-serif;
 }
@@ -7,6 +7,72 @@ span{
 }
 a{
   text-decoration: none;
+}
+#btn-icon{
+  margin-right: 0.4rem;
+}
+input[type=text], select, textarea{
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 0.4rem 0.7rem;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.468);
+  border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+input[type=text]:focus, select:focus, textarea:focus{
+  border: 3px solid rgba(96, 59, 244, 0.71);
+}
+input[type=text]::placeholder, select::placeholder, textarea::placeholder{
+  font-size: 0.8rem;
+}
+textarea{
+  resize: vertical;
+  max-height: 35rem;
+}
+/* select{
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 0.4rem 0.7rem;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.468);
+  border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+select:focus{
+  border: 3px solid rgba(96, 59, 244, 0.71);
+}
+select::placeholder{
+  font-size: 0.8rem;
+} */
+button{
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  background-color: rgb(63, 63, 250);
+}
+button a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+button:hover{
+  cursor: pointer;
+  background-color: rgb(16, 16, 249);
+  /* box-shadow: 0px 0px 10px 4px rgba(128, 128, 128, 0.736); */
+  transition: .6s;
 }
 .top{
   background-color: red;

@@ -7,6 +7,7 @@ import videoBG from './assets/Background/backgound_video.mp4'
 import MessageUI from './components/UI/MessageUI/MessageUI'
 import { useState } from 'react'
 import ListedUI from './components/UI/Items/ListedUI'
+import AddNewItem from './components/UI/AddNewItem/AddNewItem'
 
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
@@ -27,6 +28,7 @@ function App() {
                             <Route path='items'>
                                 <Route path='listed-item' exact element={<ListedUI />} />
                             </Route>
+                            <Route path='add-new-item' exact element={<AddNewItem /> } />
                         </Route>
                   </Routes>
               </div>
