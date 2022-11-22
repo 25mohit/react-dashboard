@@ -7,11 +7,13 @@ import { MdAddCircle, MdOutlineSell } from 'react-icons/md'
 
 const AddNewItem = () => {
     const [addMoreOption, setAddMoreOption] = useState([
-        { name: 'condition'}
+        { name: 'condition' }
     ])
+
     const addMoreRow = () => {
         setAddMoreOption([...addMoreOption, addMoreOption])
     }
+
   return (
     <MainBody>
         <div className="add-new-item">
@@ -111,8 +113,8 @@ const AddNewItem = () => {
                 </div>
                 <div className="input-field-full add-more">
                     <label htmlFor="">Enter Condition<MdAddCircle id='add-more' onClick={ addMoreRow }/></label>                   
-                        { addMoreOption.map( dt =>  <div>
-                            <input type="text" name={dt.name} placeholder='Enter Buying Condition'/></div> ) 
+                        { addMoreOption.map( (dt, indx) =>  <div>
+                            <input type="text" name={dt.name} placeholder={`Enter ${indx+1} Buying Condition`}/></div> ) 
                         }
                     
                 </div>

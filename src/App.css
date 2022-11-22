@@ -70,7 +70,12 @@ video{
   object-fit: cover;
 }
 /* width */
-.static-sidebar::-webkit-scrollbar ,.add-new-item .container::-webkit-scrollbar, .inbox .container::-webkit-scrollbar, .detail .container  .chat-container::-webkit-scrollbar , .listed-main .container .table::-webkit-scrollbar {
+.static-sidebar::-webkit-scrollbar ,
+.add-new-item .container::-webkit-scrollbar,
+ .inbox .container::-webkit-scrollbar, 
+ .detail .container  .chat-container::-webkit-scrollbar ,
+ .draft-main .container::-webkit-scrollbar ,
+  .container .table::-webkit-scrollbar {
     /* width: 7px; */
     scroll-behavior: smooth;
     display: none;

@@ -8,6 +8,7 @@ import MessageUI from './components/UI/MessageUI/MessageUI'
 import { useState } from 'react'
 import ListedUI from './components/UI/Items/ListedUI'
 import AddNewItem from './components/UI/AddNewItem/AddNewItem'
+import DraftUI from './components/UI/Items/DraftUI'
 
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
@@ -27,6 +28,7 @@ function App() {
                             <Route path='message' exact element={<MessageUI />} />
                             <Route path='items'>
                                 <Route path='listed-item' exact element={<ListedUI />} />
+                                <Route path='draft-item' exact element={<DraftUI />} />
                             </Route>
                             <Route path='add-new-item' exact element={<AddNewItem /> } />
                         </Route>

@@ -586,42 +586,42 @@
 .listed-main .head .active p{
     color: black;
 }
-.listed-main .container .table{
+ .container .table{
     max-height: 100%;
     overflow: auto;
 }
-.listed-main .container .table table{
+ .container .table table{
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.589);
     width: 100%;
 }
-/* .listed-main .container .table thead{
+/*  .container .table thead{
     background-color: green;
 } */
-.listed-main .container .table thead tr td:nth-child(1){
+ .container .table thead tr td:nth-child(1){
     width: 2rem;
 }
-.listed-main .container .table thead tr td:nth-child(2){
+ .container .table thead tr td:nth-child(2){
     width: 4rem;
 }
-.listed-main .container .table thead tr td{
+ .container .table thead tr td{
     padding: 0.5rem;
     cursor: pointer;
 }
-.listed-main .container .table thead tr td p{
+ .container .table thead tr td p{
     font-size: 1.2rem;
     padding: 0.2rem;
 }
-.listed-main .container .table tbody tr:nth-child(even) {
+ .container .table tbody tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.596);
 }
-.listed-main .container .table tbody tr td{
+ .container .table tbody tr td{
     padding: 0.7rem 0.5rem;
 }
-.listed-main .container .table tbody tr td:nth-child(8) {
+ .container .table tbody tr td:nth-child(8) {
     width: 10rem;
 }
-.listed-main .container .table tbody tr td:nth-child(8) #table-action{
+ .container .table tbody tr td:nth-child(8) #table-action{
     /* background-color: red; */
     font-size: 1.2rem;
     margin: 0 0.4rem;
@@ -780,4 +780,22 @@
 .add-new-item .container footer button:nth-child(1):hover{
     background-color: #fb1a1a;
     transition: 0.6s;
+}
+
+/* DRAFT MAIN UI */
+.draft-main{
+    padding:0 0.7rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+}
+.draft-main .container{
+    height: 100%;
+    max-height: 100%;
+    /* background-color: red; */
+    overflow: auto;
+}
+.draft-main .container .table{
 }
