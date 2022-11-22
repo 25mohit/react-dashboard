@@ -35,7 +35,8 @@ input[type=text]::placeholder, select::placeholder, textarea::placeholder{
 }
 textarea{
   resize: vertical;
-  max-height: 35rem;
+  min-height: 7rem;
+  max-height: 13rem;
 }
 button{
   border: none;
