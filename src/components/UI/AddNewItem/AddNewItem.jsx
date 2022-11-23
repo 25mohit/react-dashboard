@@ -72,14 +72,14 @@ const AddNewItem = () => {
                             <option value="">Select Item Condition</option>
                         </select>
                     </div>
+                </div>
+                <div className="input-field-multi">
                     <div>
                         <label htmlFor="">Color</label>
                         <select name="" id="">
                             <option value="">Select Color</option>
                         </select>
                     </div>
-                </div>
-                <div className="input-field-multi">
                     <div>
                         <label htmlFor="">Delivery Time</label>
                         <select name="" id="">
@@ -96,6 +96,14 @@ const AddNewItem = () => {
                             <option value="">Select Delivery Option</option>
                         </select>
                     </div>
+                </div>
+                <div className="input-field-multi last">
+                    <div>
+                        <label htmlFor="">Free Delivery</label>
+                        <select name="" id="">
+                            <option value="">Select Delivery</option>
+                        </select>
+                    </div>
                     <div>
                         <label htmlFor="">Delivery Partner</label>
                         <select name="" id="">
@@ -103,18 +111,10 @@ const AddNewItem = () => {
                         </select>
                     </div>
                 </div>
-                <div className="input-field-multi">
-                    <div>
-                        <label htmlFor="">Free Delivery</label>
-                        <select name="" id="">
-                            <option value="">Select Delivery</option>
-                        </select>
-                    </div>
-                </div>
                 <div className="input-field-full add-more">
                     <label htmlFor="">Enter Condition<MdAddCircle id='add-more' onClick={ addMoreRow }/></label>                   
                         { addMoreOption.map( (dt, indx) =>  <div>
-                            <input type="text" name={dt.name} placeholder={`Enter ${indx+1} Buying Condition`}/></div> ) 
+                            <input type="text" name={dt.name} placeholder={`Buying Condition Line ${indx+1}`}/></div> ) 
                         }
                     
                 </div>

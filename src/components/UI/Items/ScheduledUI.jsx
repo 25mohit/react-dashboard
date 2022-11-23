@@ -7,7 +7,7 @@ import { FaRegEdit } from 'react-icons/fa'
 import MessageCard from '../../Common/MessageCard/MessageCard'
 import { Link } from 'react-router-dom'
 
-const DraftUI = () => {
+const ScheduledUI = () => {
     
     const [deleteModal, setDeleteModal] = useState(false)
 
@@ -35,7 +35,7 @@ const DraftUI = () => {
     <MainBody>
         <div className="draft-main">
             <div className="head">
-                <h2>Saved Items</h2>
+                <h2>Scheduled Items</h2>
             </div>
             <div className="container">
                     <div className="table">
@@ -84,4 +84,4 @@ const DraftUI = () => {
   )
 }
 
-export default DraftUI
+export default ScheduledUI
