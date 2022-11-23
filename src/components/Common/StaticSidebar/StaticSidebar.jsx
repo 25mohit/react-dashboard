@@ -105,7 +105,7 @@ const allToogleOff = () => {
                             <h4><Link to='/items/listed-item'>Listed</Link></h4>
                             <h4><Link to='/items/draft-item'>Draft</Link></h4>
                             <h4><Link to='/items/scheduled-item'>Scheduled</Link></h4>
-                            <h4>Unsold</h4>
+                            <h4><Link to='/items/unsold-item'>Unsold</Link></h4>
                     </div> }
               </div>
               <div className="menu">

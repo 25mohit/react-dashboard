@@ -10,6 +10,7 @@ import ListedUI from './components/UI/Items/ListedUI'
 import AddNewItem from './components/UI/AddNewItem/AddNewItem'
 import DraftUI from './components/UI/Items/DraftUI'
 import ScheduledUI from './components/UI/Items/ScheduledUI'
+import UnsoldUI from './components/UI/Items/UnsoldUI'
 
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
@@ -31,6 +32,7 @@ function App() {
                                 <Route path='listed-item' exact element={<ListedUI />} />
                                 <Route path='draft-item' exact element={<DraftUI />} />
                                 <Route path='scheduled-item' exact element={<ScheduledUI />} />
+                                <Route path='unsold-item' exact element={<UnsoldUI />} />
                             </Route>
                             <Route path='add-new-item' exact element={<AddNewItem /> } />
                         </Route>
