@@ -16,7 +16,6 @@ const OrdersUI = () => {
     
     const category = currentCategory
 
-
     const colorTytpe = (type) => {
         if(type==='cash'){
             return 'Cash'
@@ -66,7 +65,6 @@ const OrdersUI = () => {
     }
 
     const getCategoryType = (index, category) => {
-        console.log(index, category);
         setCatType(index)
         setCurrentCategory(category)
     }
@@ -75,8 +73,7 @@ const OrdersUI = () => {
         setCurrentCategory('')
         setCatType(null)
     }
-    
-    console.log("index", category);
+
     useEffect(() => {
         const catFilter = ITEMS_LIST_DATA?.filter(data => data.category === category)
         setCategoryFilter(catFilter)
@@ -100,8 +97,8 @@ const OrdersUI = () => {
             </div>
             <div className="categories-bar">
                 <div>
-                    <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All</span>
-                    { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx===catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)}</span> )}
+                    <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
+                    { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx===catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
                 </div>
                 <div>
                     <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
@@ -124,7 +121,7 @@ const OrdersUI = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            { categoryFilter.map((data, indx) => <tr key={indx}>
+                            { searchFiltered.map((data, indx) => <tr key={indx}>
                                 <td><input type="checkbox" name="" id="" /></td>
                                 <td><p>{indx+1}</p></td>
                                 <td><p></p></td>
