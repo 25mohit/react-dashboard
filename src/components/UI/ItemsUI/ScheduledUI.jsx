@@ -70,7 +70,7 @@ const ScheduledUI = () => {
                                         <AiFillEye id='table-action' className='show-icon'/>
                                         <BsTrash id='table-action' className='delete-icon' onClick={() => setDeleteModal(true)}/>
                                         <Link to='/add-new-item'><FaRegEdit id='table-action' className='edit-icon'/></Link>
-                                        <BsFillStopwatchFill id='table-action' className='time-icon'/>
+                                        {/* <BsFillStopwatchFill id='table-action' className='time-icon'/> */}
                                         <MdOutlineSell id='table-action' className='sell-icon'/>
                                     </td>
                                 </tr> )}
