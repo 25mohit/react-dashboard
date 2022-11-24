@@ -72,7 +72,7 @@ const allToogleOff = () => {
                         </div>
                     </div>
                     { toogleOption.sales && <div className="sub-menu">
-                            <h4>Orders</h4>
+                            <h4><Link to='/sales/orders'>Orders</Link></h4>
                             <h4>Pending</h4>
                             <h4>Completed</h4>
                     </div> }

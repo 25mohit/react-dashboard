@@ -287,6 +287,28 @@
     user-select: none;
     cursor: pointer;
 }
+.empty-order{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: auto;
+}
+.empty-order h1{
+    color: rgba(77, 77, 77, 0.711);
+    letter-spacing: 2px;
+}
+.empty-order p{
+    color: rgba(111, 111, 111, 0.711);
+    margin-top: 2rem;
+    max-width: 75%;
+    letter-spacing: 2px;
+    line-height: 35px;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
 .detail .container{
     height: 100%;
     max-height: 100%;
@@ -608,6 +630,9 @@
  .container .table thead tr td p{
     font-size: 1.2rem;
     padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
  .container .table tbody tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.596);
@@ -812,4 +837,90 @@
     color: #4f4f4f;
     letter-spacing: 1.5px;
     font-size: 1.4rem;
+}
+
+
+/* ORDERS MAIN  */
+.orders-main{
+    padding: 0 0.7rem;
+    height: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.orders-main .head{
+    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.266);
+    flex-direction: column;
+}
+.orders-main .head > div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.orders-main .head > div:nth-child(1) h2{
+    display: flex;
+    align-items: center;
+}
+.orders-main .head p{
+    margin-top: 1rem;
+    line-height: 28px;
+    letter-spacing: 1.9px;
+}
+.orders-main .categories-bar{
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+.orders-main .categories-bar .toogle {
+    background-color: rgba(162, 162, 162, 0.319);
+    padding: 0.3rem 1rem;
+    user-select: none;
+    color: rgb(61, 59, 59);
+    border-radius: 10px;
+}
+.orders-main .categories-bar .toogle:hover {
+    cursor: pointer;
+}
+.orders-main .categories-bar .active {
+    background-color: rgba(255, 255, 255, 0.811);
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    color: rgb(66, 65, 65);
+}
+
+.orders-main .categories-bar .active:hover {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    transition: 0.6s;
+}
+.orders-main .categories-bar > div {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.orders-main .categories-bar > div:nth-child(1){
+    width: 60%;
+}
+.orders-main .categories-bar > div:nth-child(2){
+    width: 40%;
+}
+.orders-main .container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+.payment-color{
+    font-weight: 600;
+    width: fit-content;
 }

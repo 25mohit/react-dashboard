@@ -6,30 +6,11 @@ import { MdOutlineSell } from 'react-icons/md'
 import { FaRegEdit } from 'react-icons/fa'
 import MessageCard from '../../Common/MessageCard/MessageCard'
 import { Link } from 'react-router-dom'
+import ITEMS_LIST_DATA from '../../../MocData/ORDERS_MOC_DATA'
 
 const ScheduledUI = () => {
     
     const [deleteModal, setDeleteModal] = useState(false)
-
-    const tableData = [
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-        {title:'Mens Shirt Cotton', size:['S','M','L','XL','XXL'], price: '$9.99', qty:'10'},
-    ]
 
   return (
     <MainBody>
@@ -53,7 +34,7 @@ const ScheduledUI = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                { tableData.map((data, indx) => <tr key={indx}>
+                                { ITEMS_LIST_DATA.map((data, indx) => <tr key={indx}>
                                     <td><input type="checkbox" name="" id="" /></td>
                                     <td><p>{indx+1}</p></td>
                                     <td><p></p></td>

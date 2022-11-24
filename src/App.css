@@ -13,6 +13,7 @@ a{
 }
 input[type=text], select, textarea{
   border: none;
+  width: 100%;
   font-size: 1rem;
   letter-spacing: 1px;
   color: rgb(79, 78, 78);
@@ -75,6 +76,7 @@ video{
  .inbox .container::-webkit-scrollbar, 
  .detail .container  .chat-container::-webkit-scrollbar ,
  .draft-main .container::-webkit-scrollbar ,
+ .empty-order::-webkit-scrollbar ,
   .container .table::-webkit-scrollbar {
     /* width: 7px; */
     scroll-behavior: smooth;

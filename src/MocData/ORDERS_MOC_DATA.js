@@ -1,0 +1,27 @@
+const ITEMS_LIST_DATA = [
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'iPhone 12 Plus Pro 128GB', category:'electronics', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'online' , qty:'10'},
+    {title:'BoroPlus 100% SAFE', category:'health_products', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'UPI' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'iPhone 12 Plus Pro 128GB', category:'electronics', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'credit_card' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'online' , qty:'10'},
+    {title:'BoroPlus 100% SAFE', category:'health_products', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'UPI' , qty:'10'},
+    {title:'iPhone 12 Plus Pro 128GB', category:'electronics', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'online' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'credit_card' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'UPI' , qty:'10'},
+    {title:'iPhone 12 Plus Pro 128GB', category:'electronics', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'online' , qty:'10'},
+    {title:'BoroPlus 100% SAFE', category:'health_products', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'Fair & Lovely Fairnes Cream', category:'beauty_products', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'credit_card' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'UPI' , qty:'10'},
+    {title:'Fair & Lovely Fairnes Cream', category:'beauty_products', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'online' , qty:'10'},
+    {title:'iPhone 12 Plus Pro 128GB', category:'electronics', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'Fair & Lovely Fairnes Cream', category:'beauty_products', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'BoroPlus 100% SAFE', category:'health_products', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+    {title:'Mens Shirt Cotton', category:'cloths', size:['S','M','L','XL','XXL'], price: '$9.99', payment:'cash' , qty:'10'},
+]
+
+export default ITEMS_LIST_DATA
