@@ -11,6 +11,7 @@ import ScheduledUI from './components/UI/ItemsUI/ScheduledUI'
 import UnsoldUI from './components/UI/ItemsUI/UnsoldUI'
 import AddNewItem from './components/UI/AddNewItemUI/AddNewItemUI'
 import OrdersUI from './components/UI/SalesUI/OrdersUI'
+import DashboardUI from './components/UI/DashboardUI/DashboardUI'
 
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
@@ -26,19 +27,18 @@ function App() {
               </div> }
               <div className={toogleSidebar ? 'full-width' : 'body-main'}>
                   <Routes>
-                        <Route path='/'>
-                            <Route path='sales'>
-                                <Route path='orders' exact element={<OrdersUI />} />
-                            </Route>
-                            <Route path='items'>
-                                <Route path='listed-item' exact element={<ListedUI />} />
-                                <Route path='draft-item' exact element={<DraftUI />} />
-                                <Route path='scheduled-item' exact element={<ScheduledUI />} />
-                                <Route path='unsold-item' exact element={<UnsoldUI />} />
-                            </Route>
-                            <Route path='message' exact element={<MessageUI />} />
-                            <Route path='add-new-item' exact element={<AddNewItem /> } />
+                        <Route path='/' exact element={<DashboardUI />} />
+                        <Route path='sales'>
+                            <Route path='orders' exact element={<OrdersUI />} />
                         </Route>
+                        <Route path='items'>
+                            <Route path='listed-item' exact element={<ListedUI />} />
+                            <Route path='draft-item' exact element={<DraftUI />} />
+                            <Route path='scheduled-item' exact element={<ScheduledUI />} />
+                            <Route path='unsold-item' exact element={<UnsoldUI />} />
+                        </Route>
+                        <Route path='message' exact element={<MessageUI />} />
+                        <Route path='add-new-item' exact element={<AddNewItem /> } />
                   </Routes>
               </div>
         </div>

@@ -134,6 +134,87 @@
 }
 
 
+/* DASHBOARD  */
+.dashboard-main{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 0 0.7rem;
+    box-sizing: border-box;
+}
+.dashboard-main .header{
+    background-color: rgb(11, 183, 120);
+    color: white;
+    display: flex;
+    padding: 1rem;
+    height: fit-content;
+    max-height: 10rem;
+    overflow: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.dashboard-main .header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashboard-main .header h1{
+    font-size: 1.6rem;
+    width: 70%;
+    line-height: 38px;
+    letter-spacing: 2.3px;
+}
+.dashboard-main .header p{
+    font-size: 1.2rem;
+    margin-top: 0.9rem;
+    line-height: 32px;
+    letter-spacing: 2px;
+}
+.dashboard-main .nevbar{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0.7rem ;
+    padding-left: 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.395);
+    box-sizing: border-box;
+    margin: 0.8rem 0;
+}
+.dashboard-main .nevbar > div {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: rgb(147, 147, 147);
+}
+
+.dashboard-main .nevbar .active{
+    color: rgb(67, 67, 67);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: rgb(67, 67, 67);
+}
+.dashboard-main .nevbar > div:hover {
+    cursor: pointer;
+    color: rgb(92, 92, 92);
+    transition: 0.5s;
+}
+.dashboard-main .nevbar .active p{
+    color: rgb(32, 32, 32);
+}
+.dashboard-main .nevbar > div p{
+    font-weight: 600;
+    user-select: none;
+    letter-spacing: 1px;
+    color: rgb(147, 147, 147);
+}
+.dashboard-main .nevbar > div p:hover{
+    color: rgb(86, 86, 86);
+    transition: 0.5s;
+}
+
+
 /* MESSAGE SECTION */
 .message-main{
     padding:0 0.7rem;

@@ -74,6 +74,8 @@ video{
  .detail .container  .chat-container::-webkit-scrollbar ,
  .draft-main .container::-webkit-scrollbar ,
  .empty-order::-webkit-scrollbar ,
+ .dashboard-main::-webkit-scrollbar ,
+ .dashboard-main .header::-webkit-scrollbar ,
  .categories-bar > div:nth-child(1)::-webkit-scrollbar ,
   .container .table::-webkit-scrollbar {
     /* width: 7px; */
