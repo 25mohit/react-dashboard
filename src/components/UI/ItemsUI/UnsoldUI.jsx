@@ -3,9 +3,7 @@ import MainBody from '../../Common/Layout/MainBody/MainBody'
 import { BsFillStopwatchFill, BsTrash } from 'react-icons/bs'
 import { AiFillEye } from 'react-icons/ai'
 import { MdOutlineSell } from 'react-icons/md'
-import { FaRegEdit } from 'react-icons/fa'
 import MessageCard from '../../Common/MessageCard/MessageCard'
-import { Link } from 'react-router-dom'
 import ITEMS_LIST_DATA from '../../../MocData/ORDERS_MOC_DATA'
 
 const UnsoldUI = () => {

@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BsInfoSquareFill, BsThreeDots } from 'react-icons/bs'
+import { FiDollarSign } from 'react-icons/fi'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
 import ITEMS_LIST_DATA from '../../../MocData/ORDERS_MOC_DATA'
-import { AiFillEye } from 'react-icons/ai'
-import { FaRegEdit } from 'react-icons/fa'
-import { FiDollarSign } from 'react-icons/fi'
 
 const OrdersUI = () => {
     const [search, setSearch] = useState('')
-    const [searchFiltered, setSearchFiltered] = useState([])
     const [empty, setEmpty] = useState(false)
     const [catType, setCatType] = useState(null)
     const [currentCategory, setCurrentCategory] = useState('')
+    const [searchFiltered, setSearchFiltered] = useState([])
     const [categoryFilter, setCategoryFilter] = useState([])
     
     const category = currentCategory
 
-    const colorTytpe = (type) => {
+    const paymentType = (type) => {
         if(type==='cash'){
             return 'Cash'
         } else if(type==='online'){
@@ -61,7 +59,11 @@ const OrdersUI = () => {
             return 'Health Products'
         } else if(category==='beauty_products'){
             return 'Beauty Products'
-        } 
+        }  else if(category==='medicle'){
+            return 'Medicles'
+        } else if(category==='applience'){
+            return 'Home Appliences'
+        }
     }
 
     const getCategoryType = (index, category) => {
@@ -98,9 +100,10 @@ const OrdersUI = () => {
             <div className="categories-bar">
                 <div>
                     <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
-                    { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx===catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
+                    { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
                 </div>
                 <div>
+                    <div className="shadow-div" />
                     <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
                 </div>
             </div>
@@ -117,7 +120,7 @@ const OrdersUI = () => {
                                 <td><p>Size</p></td>
                                 <td><p>Price</p></td>
                                 <td><p>Qty.</p></td>
-                                <td><p>Payment <FiDollarSign style={{color:'rgb(250, 62, 55)'}}/></p></td>
+                                <td><p>Payment <FiDollarSign style={{color:'rgba(240, 62, 55,0.8)'}}/></p></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -135,7 +138,7 @@ const OrdersUI = () => {
                                     </p></td>
                                 <td><p>{data.price}</p></td>
                                 <td><p>{data.qty} Items</p></td>
-                                <td><p style={{color:getPaymentColor(data.payment)}} className='payment-color'>{colorTytpe(data.payment)}</p></td>
+                                <td><p style={{color:getPaymentColor(data.payment)}} className='payment-color'>{paymentType(data.payment)}</p></td>
                             </tr> )}
                         </tbody>
                     </table>

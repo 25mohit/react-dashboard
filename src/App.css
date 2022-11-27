@@ -59,9 +59,7 @@ button:hover{
   transition: .6s;
 }
 .top{
-  background-color: red;
   width: 100%;
-  /* display: none; */
 }
 video{
   margin: -8px;
@@ -77,6 +75,7 @@ video{
  .detail .container  .chat-container::-webkit-scrollbar ,
  .draft-main .container::-webkit-scrollbar ,
  .empty-order::-webkit-scrollbar ,
+ .categories-bar > div:nth-child(1)::-webkit-scrollbar ,
   .container .table::-webkit-scrollbar {
     /* width: 7px; */
     scroll-behavior: smooth;
@@ -100,3 +99,33 @@ video{
     background: #f19711; 
     cursor: pointer;
   }
+  .main{
+    position: absolute;
+    padding: 0;
+    margin: -8px;
+    width: 100%;
+    background-color: rgba(237, 237, 237,0.1);
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    display: flex;
+}
+.sidebar-main{
+    width: 20rem;
+    padding: 0.5rem;
+}
+.body-main{
+    width: 81%;
+    padding: 0.5rem;
+}
+.full-width{
+    width: 100%;
+    padding: 0.5rem;
+}
+.body-main-ui{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    padding:1.2rem 0.5rem;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
+}

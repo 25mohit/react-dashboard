@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
 import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SiJirasoftware } from "react-icons/si"
@@ -7,21 +7,22 @@ import { GoSettings } from "react-icons/go"
 import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import { FaStickyNote, FaUserAlt } from "react-icons/fa"
 import { MdAccountBalance, MdEdit } from "react-icons/md"
-import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillCartCheckFill, BsFillHandbagFill, BsFolderMinus, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
+import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 import { Link } from 'react-router-dom'
 
 const StaticSidebar = () => {
 const [toogleOption, setToogleOption] = useState({
-    items:false,
     sales:false,
+    items:false,
 })
 
 const allToogleOff = () => {
     setToogleOption({
-        items:false,
         sales:false,
+        items:false,
     })
 }
+
   return (
     <div className='static-sidebar'>
         <div className="profile">

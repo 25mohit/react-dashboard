@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
 import { BsFillCartCheckFill, BsFillPatchPlusFill, BsTrash } from 'react-icons/bs'
 import { AiFillEye } from 'react-icons/ai'
@@ -9,9 +9,62 @@ import { Link } from 'react-router-dom'
 import ITEMS_LIST_DATA from '../../../MocData/ORDERS_MOC_DATA'
 
 const ListedUI = () => {
-    const [toogle, setToogle] = useState(1)
     const [deleteModal, setDeleteModal] = useState(false)
+    const [search, setSearch] = useState('')
+    const [empty, setEmpty] = useState(false)
+    const [catType, setCatType] = useState(null)
+    const [currentCategory, setCurrentCategory] = useState('')
+    const [searchFiltered, setSearchFiltered] = useState([])
+    const [categoryFilter, setCategoryFilter] = useState([])
+    
+    const category = currentCategory
 
+    useEffect(() => {
+        const filtered = categoryFilter?.filter(dt => dt.title.toLowerCase().includes(search.toLowerCase()))
+        setSearchFiltered(filtered)
+        if(filtered.length ===0){
+            setEmpty(true)
+        } else {
+            setEmpty(false)
+        }
+    },[search, categoryFilter])
+
+    const uniqueCategory = [...new Set(ITEMS_LIST_DATA?.map(category => category.category))]
+
+    const getCategory = (category) => {
+        if(category==='cloths'){
+            return 'Cloths'
+        } else if(category==='electronics'){
+            return 'Electronics'
+        } else if(category==="health_products"){
+            return 'Health Products'
+        } else if(category==='beauty_products'){
+            return 'Beauty Products'
+        } else if(category==='medicle'){
+            return 'Medicles'
+        } else if(category==='applience'){
+            return 'Home Appliences'
+        }
+    }
+
+    const getCategoryType = (index, category) => {
+        setCatType(index)
+        setCurrentCategory(category)
+    }
+
+    const showAll = () => {
+        setCurrentCategory('')
+        setCatType(null)
+    }
+
+    useEffect(() => {
+        const catFilter = ITEMS_LIST_DATA?.filter(data => data.category === category)
+        setCategoryFilter(catFilter)
+        if(category===''){
+            setCategoryFilter(ITEMS_LIST_DATA)
+        }
+    },[category])
+    
   return (
     <MainBody>
         <div className="listed-main">
@@ -39,14 +92,18 @@ const ListedUI = () => {
                 </div>
             </div>
             <div className="head">
-                <div>
-                    {/* <div className={toogle===1 ? 'active' : ''} onClick={() => setToogle(1)}><p>TODAY</p></div>
-                    <div className={toogle===2 ? 'active' : ''} onClick={() => setToogle(2)}><p>YESTERDAY</p></div>
-                    <div className={toogle===3 ? 'active' : ''} onClick={() => setToogle(3)}><p>LAST 7 DAYS</p></div>
-                    <div className={toogle===4 ? 'active' : ''} onClick={() => setToogle(4)}><p>LAST 30 DAYS</p></div> */}
+                <div className="categories-bar">
+                    <div>
+                        <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
+                        { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
+                    </div>
+                    <div>
+                        <div className="shadow-div" />
+                        <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
+                    </div>
                 </div>
                 <div>
-                        <button><Link to='/add-new-item'><BsFillPatchPlusFill id='btn-icon'/>Add New Item</Link></button>
+                    <button><Link to='/add-new-item'><BsFillPatchPlusFill id='btn-icon'/>Add New Item</Link></button>
                 </div>
             </div>
             <div className="container">
