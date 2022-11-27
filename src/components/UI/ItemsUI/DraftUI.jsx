@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
 import { BsFillStopwatchFill, BsTrash } from 'react-icons/bs'
-import { AiFillEye } from 'react-icons/ai'
+import { AiFillCaretRight, AiFillEye } from 'react-icons/ai'
 import { MdOutlineSell } from 'react-icons/md'
 import { FaRegEdit } from 'react-icons/fa'
 import MessageCard from '../../Common/MessageCard/MessageCard'
@@ -11,12 +11,100 @@ import ITEMS_LIST_DATA from '../../../MocData/ORDERS_MOC_DATA'
 const DraftUI = () => {
     
     const [deleteModal, setDeleteModal] = useState(false)
+    const [search, setSearch] = useState('')
+    const [empty, setEmpty] = useState(false)
+    const [catType, setCatType] = useState(null)
+    const [currentCategory, setCurrentCategory] = useState('')
+    const [searchFiltered, setSearchFiltered] = useState([])
+    const [categoryFilter, setCategoryFilter] = useState([])
 
+    const category = currentCategory
+
+    const paymentType = (type) => {
+        if(type==='cash'){
+            return 'Cash'
+        } else if(type==='online'){
+            return 'Online Banking'
+        } else if (type==='credit_card'){
+            return 'Credit Card'
+        } else if (type==='UPI'){
+            return 'UPI'
+        }
+    }
+
+    const getPaymentColor = (type) => {
+        if(type==='cash'){
+            return 'rgb(255, 66, 66)'
+        } else if(type==='online'){
+            return 'rgb(66, 120, 255)'
+        } else if (type==='credit_card'){
+            return 'rgb(255, 173, 66)'
+        } else if (type==='UPI'){
+            return 'rgb(66, 120, 255)'
+        }
+    }
+
+    useEffect(() => {
+        const filtered = categoryFilter?.filter(dt => dt.title.toLowerCase().includes(search.toLowerCase()))
+        setSearchFiltered(filtered)
+        if(filtered.length ===0){
+            setEmpty(true)
+        } else {
+            setEmpty(false)
+        }
+    },[search, categoryFilter])
+
+    const uniqueCategory = [...new Set(ITEMS_LIST_DATA?.map(category => category.category))]
+
+    const getCategory = (category) => {
+        if(category==='cloths'){
+            return 'Cloths'
+        } else if(category==='electronics'){
+            return 'Electronics'
+        } else if(category==="health_products"){
+            return 'Health Products'
+        } else if(category==='beauty_products'){
+            return 'Beauty Products'
+        }  else if(category==='medicle'){
+            return 'Medicles'
+        } else if(category==='applience'){
+            return 'Home Appliences'
+        }
+    }
+
+    const getCategoryType = (index, category) => {
+        setCatType(index)
+        setCurrentCategory(category)
+    }
+
+    const showAll = () => {
+        setCurrentCategory('')
+        setCatType(null)
+    }
+
+    useEffect(() => {
+        const catFilter = ITEMS_LIST_DATA?.filter(data => data.category === category)
+        setCategoryFilter(catFilter)
+        if(category===''){
+            setCategoryFilter(ITEMS_LIST_DATA)
+        }
+    },[category])
+    
   return (
     <MainBody>
         <div className="draft-main">
             <div className="head">
                 <h2>Saved Items</h2>
+                <div className="categories-bar">
+                    <div>
+                        <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
+                        { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
+                    </div>
+                    <div>
+                        <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
+                        <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
+                    </div>
+                </div>
             </div>
             <div className="container">
                     <div className="table">
@@ -34,7 +122,7 @@ const DraftUI = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                { ITEMS_LIST_DATA.map((data, indx) => <tr key={indx}>
+                                { searchFiltered.map((data, indx) => <tr key={indx}>
                                     <td><input type="checkbox" name="" id="" /></td>
                                     <td><p>{indx+1}</p></td>
                                     <td><p></p></td>

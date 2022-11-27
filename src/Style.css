@@ -854,13 +854,12 @@
 }
 .categories-bar > div:nth-child(2){
     width: 40%;
-    background-color: rgba(232, 231, 231, 0.862);
     position: relative;
 }
 .categories-bar > div:nth-child(2) .shadow-div{
     /* background-color: red; */
     cursor: pointer;
-    border-radius:0 10px 10px 0;
+    border-radius: 5px;
     backdrop-filter: blur(1.5px) brightness(1);
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.079), rgba(232, 231, 231, 0.862));
     position: absolute;
@@ -872,6 +871,12 @@
     height: 100%;
     margin: 0 !important;
     padding: 0 !important;
+}
+.categories-bar > div:nth-child(2) .shadow-div span{
+    color: rgb(107, 107, 107);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
 }
 .categories-bar .toogle {
     background-color: rgba(162, 162, 162, 0.319);

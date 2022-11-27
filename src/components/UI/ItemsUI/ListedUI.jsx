@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
 import { BsFillCartCheckFill, BsFillPatchPlusFill, BsTrash } from 'react-icons/bs'
-import { AiFillEye } from 'react-icons/ai'
+import { AiFillCaretRight, AiFillEye } from 'react-icons/ai'
 import { FaRegEdit } from 'react-icons/fa'
 import { FcMoneyTransfer, FcSearch } from 'react-icons/fc'
 import MessageCard from '../../Common/MessageCard/MessageCard'
@@ -98,7 +98,7 @@ const ListedUI = () => {
                         { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
                     </div>
                     <div>
-                        <div className="shadow-div" />
+                        <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
                         <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
                     </div>
                 </div>

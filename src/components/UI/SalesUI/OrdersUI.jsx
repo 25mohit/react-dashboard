@@ -3,6 +3,7 @@ import { BsInfoSquareFill, BsThreeDots } from 'react-icons/bs'
 import { FiDollarSign } from 'react-icons/fi'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
 import ITEMS_LIST_DATA from '../../../MocData/ORDERS_MOC_DATA'
+import { AiFillCaretRight } from 'react-icons/ai'
 
 const OrdersUI = () => {
     const [search, setSearch] = useState('')
@@ -103,7 +104,7 @@ const OrdersUI = () => {
                     { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
                 </div>
                 <div>
-                    <div className="shadow-div" />
+                    <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
                     <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
                 </div>
             </div>
