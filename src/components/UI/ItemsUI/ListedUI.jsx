@@ -122,7 +122,7 @@ const ListedUI = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            { ITEMS_LIST_DATA.map((data, indx) => <tr key={indx}>
+                            { searchFiltered.map((data, indx) => <tr key={indx}>
                                 <td><input type="checkbox" name="" id="" /></td>
                                 <td><p>{indx+1}</p></td>
                                 <td><p></p></td>

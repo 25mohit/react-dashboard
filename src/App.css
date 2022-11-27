@@ -21,7 +21,6 @@ input[type=text], select, textarea{
   padding: 0.4rem 0.7rem;
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
-  margin-bottom: 0.5rem;
   border: 3px solid rgba(255, 255, 255, 0.468);
   border-radius: 10px;
   -webkit-transition: 0.5s;

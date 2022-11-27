@@ -854,6 +854,7 @@
 }
 .categories-bar > div:nth-child(2){
     width: 40%;
+    background-color: rgba(232, 231, 231, 0.862);
     position: relative;
 }
 .categories-bar > div:nth-child(2) .shadow-div{
@@ -861,7 +862,7 @@
     cursor: pointer;
     border-radius:0 10px 10px 0;
     backdrop-filter: blur(1.5px) brightness(1);
-    background-image: linear-gradient(to right, rgba(239, 239, 239, 0.308), rgba(232, 231, 231, 0.862));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.079), rgba(232, 231, 231, 0.862));
     position: absolute;
     left: -3.5rem;
     width: 3.5rem;
