@@ -328,7 +328,7 @@
     color: #ff0000c9;
 }
 .most-sold > div:nth-child(2) .sold-item-card{
-    background-color: rgba(255, 255, 255, 0.766);
+    background-color: rgba(255, 255, 255, 0.647);
     padding: 0.4rem ;
     box-sizing: border-box;
     border-radius: 15px;

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { MdOutlineLocalOffer } from 'react-icons/md'
 import DashboardChart from '../../../Helpers/Chart/DashboardChart'
 import MostSoldProduct from '../../../Helpers/MostSoldProduct/MostSoldProduct'
@@ -10,22 +9,22 @@ const HomeUI = () => {
         <div className="card-container">
             <div>
                 <span><MdOutlineLocalOffer /></span>
-                <h2>714K</h2>
+                <h2>714&nbsp;K</h2>
                 <p>Weekly Sales</p>
             </div>
             <div>
                 <span><MdOutlineLocalOffer /></span>
-                <h2>714K</h2>
+                <h2>714&nbsp;K</h2>
                 <p>Weekly Sales</p>
             </div>
             <div>
                 <span><MdOutlineLocalOffer /></span>
-                <h2>714K</h2>
+                <h2>714&nbsp;K</h2>
                 <p>Weekly Sales</p>
             </div>
             <div>
                 <span><MdOutlineLocalOffer /></span>
-                <h2>714K</h2>
+                <h2>714&nbsp;K</h2>
                 <p>Weekly Sales</p>
             </div>
         </div>
