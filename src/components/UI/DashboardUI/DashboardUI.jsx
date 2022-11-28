@@ -1,11 +1,14 @@
-import MainBody from '../../Common/Layout/MainBody/MainBody'
+import { useEffect, useState } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 import { ImHome } from 'react-icons/im'
+import MainBody from '../../Common/Layout/MainBody/MainBody'
 import { MdOutlineSettingsAccessibility } from 'react-icons/md'
 import { RiPagesFill, RiSettingsLine } from 'react-icons/ri'
-import { useState } from 'react'
 
 const DashboardUI = () => {
-    const [toogleActive, setToogleActive] = useState(1)
+    const [toogleActive, setToogleActive] = useState()
+    
+    const location = window.location.href.split('/')[4]
 
   return (
     <MainBody>
@@ -17,24 +20,23 @@ const DashboardUI = () => {
                     <p>Since&nbsp;2007</p>
                 </div>
             </div>
-            <nev className="nevbar">
-                <div className={ toogleActive === 1 ? 'active' : '' } onClick={ () => setToogleActive(1)}>
-                    <ImHome />
-                    <p>Home</p>
-                </div>
-                <div className={ toogleActive === 2 ? 'active' : '' } onClick={ () => setToogleActive(2)}>
-                    <RiPagesFill />
-                    <p>Pages</p>
-                </div>
-                <div className={ toogleActive === 3 ? 'active' : '' } onClick={ () => setToogleActive(3)}>
-                    <RiSettingsLine />
-                    <p>Quick Setting</p>
-                </div>
-                <div className={ toogleActive === 4 ? 'active' : '' } onClick={ () => setToogleActive(4)}>
-                    <MdOutlineSettingsAccessibility />
-                    <p>User Setting</p>
-                </div>
-            </nev>
+            <div className="nevbar">
+                <Link to='/dashboard/home' className={ location === 'home' ? 'active' : '' } onClick={ () => setToogleActive(1)}>
+                    <p><ImHome /> &nbsp;Home</p>
+                </Link>
+                <Link to='/dashboard/pages' className={ location === 'pages' ? 'active' : '' } onClick={ () => setToogleActive(2)}>
+                    <p><RiPagesFill />&nbsp;Pages</p>
+                </Link>
+                <Link to='/dashboard/quick-settings' className={ location === 'quick-settings' ? 'active' : '' } onClick={ () => setToogleActive(3)}>
+                    <p><RiSettingsLine />&nbsp;Quick Setting</p>
+                </Link>
+                <Link to='/dashboard/user-settings' className={ location === 'user-settings' ? 'active' : '' } onClick={ () => setToogleActive(4)}>  
+                    <p><MdOutlineSettingsAccessibility />&nbsp;User Setting</p>
+                </Link>
+            </div>
+            <div className="container">
+                <Outlet />
+            </div>
         </div>
     </MainBody>
   )

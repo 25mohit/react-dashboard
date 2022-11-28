@@ -43,7 +43,7 @@ const allToogleOff = () => {
                     <div>
                         <div>
                             <RiDashboardFill id='icon'/>
-                            <h4><Link to='/'>Dashboard</Link></h4>
+                            <h4><Link to='/dashboard/home'>Dashboard</Link></h4>
                         </div>
                     </div>
                     <div></div>
