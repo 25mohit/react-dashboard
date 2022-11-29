@@ -1,0 +1,12 @@
+@keyframes h1Text {
+    from {color: transparent;}
+    to {color: rgb(255, 98, 98);}
+  }
+@keyframes buttonText {
+    from {
+        color: transparent;
+        background-color:transparent;
+        border:1px transparent
+    }
+    to {color: rgb(255, 98, 98);}
+  }
