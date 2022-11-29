@@ -52,18 +52,6 @@ const allToogleOff = () => {
               <div className="menu">
                     <div>
                         <div>
-                            <BsListTask id='icon'/>
-                            <h4>My Project Task</h4>
-                        </div>
-                        <div>
-                            <BsFillArrowRightCircleFill id='icon'/>
-                        </div>
-                    </div>
-                    <div></div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
                             <BsFillHandbagFill id='icon'/>
                             <h4>Orders</h4>
                         </div>

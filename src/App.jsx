@@ -22,10 +22,8 @@ import UsersSetting from './components/UI/DashboardUI/TabsUI/UsersSetting'
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
 
-  const location = window.location.href.split('/')[3]
-
   return (
-    <Router baseName={'/'}>
+    <Router>
         <div className="top">
               <video src={videoBG} autoPlay muted loop/>
         </div>

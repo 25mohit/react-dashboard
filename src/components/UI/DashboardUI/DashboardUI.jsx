@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { ImHome } from 'react-icons/im'
 import MainBody from '../../Common/Layout/MainBody/MainBody'

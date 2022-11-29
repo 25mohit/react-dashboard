@@ -11,6 +11,7 @@ import EMAIL_MOC_DATA from '../../../MocData/EMAIL_MOC_DATA.JS'
 const MessageUI = () => {
     const [search, setSearch] = useState('')
     const [empty, setEmpty] = useState(false)
+    const [welcomeScreen, setWelcomeScreen] = useState(true)
     const [filteredEmail, setFilteredEmail] = useState([])
     const [idx, setIndx] = useState(null)
     const [newArr, setNewArr] = useState([])
@@ -19,6 +20,7 @@ const MessageUI = () => {
 
     const toogle = (index) => {
         setIndx(index)
+        setWelcomeScreen(false)
     }
 
     useEffect(() => {
@@ -102,10 +104,10 @@ const MessageUI = () => {
                         </div>
                 </div>
                 <div className="detail">
-                        {/* <div className='empty'>
+                        { welcomeScreen && <div className='empty'>
                             <h1> Welcome to your personalise message box </h1>
-                        </div> */}
-                        <div className="container">
+                        </div> }
+                        { !welcomeScreen && <div className="container">
                             <div className="header">
                                 <div>
                                     <div>
@@ -135,7 +137,7 @@ const MessageUI = () => {
                                         <input type="text" value={message} name='message' onChange={changeMessage}/>
                                         <RiSendPlaneFill id='send-icon' onClick={sendMessage}/>
                                 </div>
-                        </div>
+                        </div> }
                 </div>
         </div>
     </MainBody>
