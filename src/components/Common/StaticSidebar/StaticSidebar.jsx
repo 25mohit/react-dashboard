@@ -3,11 +3,12 @@ import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
 import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SiJirasoftware } from "react-icons/si"
 import { FiSlack } from "react-icons/fi"
+import { HiUserGroup } from "react-icons/hi"
 import { GoSettings } from "react-icons/go"
 import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import { FaStickyNote, FaUserAlt } from "react-icons/fa"
-import { MdAccountBalance, MdEdit } from "react-icons/md"
-import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
+import { MdAccountBalance, MdEdit, MdEmail, MdTaskAlt } from "react-icons/md"
+import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 import { Link } from 'react-router-dom'
 
 const StaticSidebar = () => {
@@ -64,7 +65,7 @@ const allToogleOff = () => {
                     <div>
                         <div>
                             <BsFillHandbagFill id='icon'/>
-                            <h4>Sales</h4>
+                            <h4>Orders</h4>
                         </div>
                         <div>
                             { !toogleOption.sales ? 
@@ -73,7 +74,7 @@ const allToogleOff = () => {
                         </div>
                     </div>
                     { toogleOption.sales && <div className="sub-menu">
-                            <h4><Link to='/sales/orders'>Orders</Link></h4>
+                            <h4><Link to='/sales/orders'>Received</Link></h4>
                             <h4>Pending</h4>
                             <h4>Completed</h4>
                     </div> }
@@ -117,6 +118,54 @@ const allToogleOff = () => {
                         </div>
                         <div>
                             <p className="notify">6</p>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+              </div>
+              <div className="menu">
+                    <div>
+                        <div>
+                            <MdEmail id='icon'/>
+                            <h4><Link to='/email'>Email</Link></h4>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+              </div>
+              <div className="menu">
+                    <div>
+                        <div>
+                            <BsGraphUp id='icon'/>
+                            <h4><Link to='/email'>Sales</Link></h4>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+              </div>
+              <div className="menu">
+                    <div>
+                        <div>
+                            <MdTaskAlt id='icon'/>
+                            <h4><Link to='/email'>Tasks</Link></h4>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+              </div>
+              <div className="menu">
+                    <div>
+                        <div>
+                            <HiUserGroup id='icon'/>
+                            <h4><Link to='/email'>Users</Link></h4>
+                        </div>
+                        <div>
                         </div>
                     </div>
                     <div>
