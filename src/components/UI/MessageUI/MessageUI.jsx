@@ -5,7 +5,7 @@ import { BsFillCameraVideoFill, BsThreeDotsVertical, BsTrash } from 'react-icons
 import { BiError } from 'react-icons/bi'
 import { RiSendPlaneFill } from 'react-icons/ri'
 import { TbPhoneCall } from 'react-icons/tb'
-import EMAIL_MOC_DATA from '../../../MocData/EMAIL_MOC_DATA.JS'
+import MESSAGE_MOC_DATA from '../../../MocData/MESSAGE_MOC_DATA.JS'
 // EMAIL_MOC_DATA
 
 const MessageUI = () => {
@@ -24,7 +24,7 @@ const MessageUI = () => {
     }
 
     useEffect(() => {
-        const filter = EMAIL_MOC_DATA.filter(data => data.name.toLowerCase().includes(search.toLowerCase()))
+        const filter = MESSAGE_MOC_DATA.filter(data => data.name.toLowerCase().includes(search.toLowerCase()))
         setFilteredEmail(filter)
         if(filter.length == 0) {
             setEmpty(true)

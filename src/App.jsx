@@ -18,6 +18,7 @@ import HomeUI from './components/UI/DashboardUI/TabsUI/HomeUI'
 import PagesUI from './components/UI/DashboardUI/TabsUI/PagesUI'
 import QuickSettings from './components/UI/DashboardUI/TabsUI/QuickSettings'
 import UsersSetting from './components/UI/DashboardUI/TabsUI/UsersSetting'
+import EmailUI from './components/UI/EmailUI/EmailUI'
 
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
@@ -50,6 +51,7 @@ function App() {
                                 <Route path='unsold-item' exact element={<UnsoldUI />} />
                             </Route>
                             <Route path='message' exact element={<MessageUI />} />
+                            <Route path='email' exact element={<EmailUI />} />
                             <Route path='add-new-item' exact element={<AddNewItem /> } />
                     </Routes>
               </div>

@@ -428,14 +428,14 @@
     height: 100%;
     justify-content: space-between;
 }
-.inbox{
+.message-main .inbox{
     width: 29%;
     box-sizing: border-box;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
 }
-.inbox .search input[type='text']{
+.message-main .inbox .search input[type='text']{
     background-color: rgb(240, 239, 239);
     padding: 0.5rem 0;
     padding-left: 0.7rem;
@@ -446,16 +446,16 @@
     width: 100%;
     outline: none;
 }
-.inbox .search input[type='text']::placeholder{
+.message-main .inbox .search input[type='text']::placeholder{
     padding-left: 0.4rem;
     color: rgb(180, 180, 180);
 }
-.inbox .container{
+.message-main .inbox .container{
     height: 100%;
     overflow-y: auto;
     margin-top: 0.9rem;
 }
-.inbox .container > div{
+.message-main .inbox .container > div{
     display: flex;
     align-items: center;
     padding: 0.4rem 0;
@@ -464,53 +464,53 @@
     justify-content: space-between;
 }
 
-.inbox .container  .notify{
+.message-main .inbox .container  .notify{
     color: rgb(71, 71, 255) !important;
     font-weight: 600;
 }
-.inbox .container > .active{
+.message-main .inbox .container > .active{
     cursor: pointer;
     background-color: rgba(255, 255, 255,0.5);
     border-radius: 10px 10px 10px 10px;
 }
-.inbox .container > div:hover{
+.message-main .inbox .container > div:hover{
     background-color: rgba(255, 255, 255,0.5);
     cursor: pointer;
     border-radius: 10px 10px 10px 10px;
     transition: 0.5s;
 }
-.inbox .container > div >:nth-child(1){
+.message-main .inbox .container > div >:nth-child(1){
     display: flex;
     align-items: center;
 }
-.inbox .container > div >:nth-child(1) img{
+.message-main .inbox .container > div >:nth-child(1) img{
     width: 2.7rem;
     height: 2.7rem;
     border-radius: 50%;
 }
-.inbox .container > div >:nth-child(1) >div{
+.message-main .inbox .container > div >:nth-child(1) >div{
     margin-left: 0.8rem;
 }
-.inbox .container > div >:nth-child(1) >div p{
+.message-main .inbox .container > div >:nth-child(1) >div p{
     font-weight: 600;
     color: rgb(67, 67, 67);
 }
-.inbox .container > div >:nth-child(1) >div span{
+.message-main .inbox .container > div >:nth-child(1) >div span{
     font-size: 0.8rem;
     color: rgb(99, 99, 99);
 }
-.inbox .container > div >:nth-child(2){
+.message-main .inbox .container > div >:nth-child(2){
     display: flex !important;
     align-items: center !important;
 }
-.inbox .container > div >:nth-child(2) span{
+.message-main .inbox .container > div >:nth-child(2) span{
     background-color: rgb(40, 40, 248);
     color: white;
     border-radius: 20px;
     font-size: 0.7rem;
     padding: 0.2rem 0.4rem;
 }
-.inbox .container .no-record{
+.message-main .inbox .container .no-record{
     /* background-color: red; */
     display: flex;
     align-items: center;
@@ -518,15 +518,15 @@
     flex-direction: column;
     color: rgb(255, 97, 97);
 }
-.inbox .container .no-record #no-record{
+.message-main .inbox .container .no-record #no-record{
     font-size: 2rem;
 }
-.inbox .container h2{
+.message-main .inbox .container h2{
     user-select: none;
     margin-top: 1rem;
     text-align: center;
 }
-.detail{
+.message-main .detail{
     width: 69%;
     border-radius: 25px;
     /* padding:0.7rem; */
@@ -686,6 +686,140 @@
 }
 .detail .container .send-input #send-icon:hover{
     cursor: pointer;
+}
+
+
+/* EMAIL UI */
+.email-main{
+    padding:0 0.7rem;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    /* background-color: rgba(255, 255, 255, 0.537); */
+    border-radius: 25px;
+    justify-content: space-between;
+}
+.email-main .inbox{
+    width: 32%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.email-main .inbox .bar{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    position: relative;
+}
+.email-main .inbox .bar .active{
+    color: rgb(171, 10, 171);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+    text-decoration-color:rgb(171, 10, 171);    ;
+}
+.email-main .inbox .bar p{
+    font-weight: bold;
+    user-select: none;
+    color: rgb(154, 154, 154);
+}
+.email-main .inbox .bar p:hover{
+    cursor: pointer;
+}
+.email-main .inbox .bar span{
+    position: absolute;
+    right: 0;
+    color: gray;
+    font-size: 1.2rem;
+}
+.email-main .inbox .bar span:hover{
+    cursor: pointer;
+    color: rgb(84, 84, 84);
+    transition: 0.5s;
+}
+.email-main .inbox .container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: orange; */
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+.email-main .inbox .container > div {
+    display: flex;
+    border-radius: 7px;
+    /* margin-top: 1rem; */
+    padding:0.8rem 0.5rem ;
+    height: fit-content;
+    border-bottom: 1px solid rgb(181, 181, 181);
+   
+}
+.email-main .inbox .container > .active {
+    background-color: rgba(255, 255, 255, 0.485);
+}
+.email-main .inbox .container > div:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.844);
+    border-color: rgb(255, 255, 255);
+}
+.email-main .inbox .container > div > div:nth-child(1){
+    padding: 0.6rem 0;
+    box-sizing: border-box;
+}
+.email-main .inbox .container > div > div:nth-child(1) span{
+    background-color: rgb(128, 0, 122);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    padding: 0.60rem;
+    user-select: none;
+    text-transform: uppercase;
+}
+.email-main .inbox .container > div .body{
+    width: 100%;
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+}
+.email-main .inbox .container > div .body > div:nth-child(1) {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.email-main .inbox .container > div .body > div:nth-child(1) p{
+    color: rgb(151, 151, 151);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.email-main .inbox .container > div .body > div:nth-child(2) h3{
+    margin-top: 0.2rem;
+    color: rgb(53, 53, 53);
+    letter-spacing: 2px;
+}
+.email-main .inbox .container > div .body > div:nth-child(3){
+    display: flex;
+    align-items: flex-end;
+}
+.email-main .inbox .container > div .body > div:nth-child(3) p{
+    margin-top: 0.6rem;
+    letter-spacing: 1.5px;
+}
+.email-main .inbox .container > div .body > div:nth-child(3) span{
+    color: rgb(200, 198, 198);
+}
+.email-main .inbox .container > div .body > div:nth-child(3) span:hover{
+    color: orange;
+    transition: 0.5s;
+}
+.email-main .inbox .container > div .body > div:nth-child(3) .active{
+    color: orange;
+}
+.email-main .inbox-body{
+    width: 68%;
+    /* border-radius: 25px; */
 }
 
 
