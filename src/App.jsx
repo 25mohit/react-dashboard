@@ -25,37 +25,37 @@ function App() {
 
   return (
     <Router>
-        <div className="top">
-              <video src={videoBG} autoPlay muted loop/>
-        </div>
-        <div className="main">
-              { !toogleSidebar && <div className="sidebar-main">
-                  <StaticSidebar />
-              </div> }
-              <div className={toogleSidebar ? 'full-width' : 'body-main'}>
-                    <Routes>
-                            <Route path='/' element={<EmptyPage />} />
-                            <Route path='dashboard' element={<DashboardUI />} >
-                                <Route path='home' element={<HomeUI />}/>
-                                <Route path='pages' element={<PagesUI />}/>
-                                <Route path='quick-settings' element={<QuickSettings />}/>
-                                <Route path='user-settings' element={<UsersSetting />}/>
-                            </Route>
-                            <Route path='sales'>
-                                <Route path='orders' exact element={<OrdersUI />} />
-                            </Route>
-                            <Route path='items'>
-                                <Route path='listed-item' exact element={<ListedUI />} />
-                                <Route path='draft-item' exact element={<DraftUI />} />
-                                <Route path='scheduled-item' exact element={<ScheduledUI />} />
-                                <Route path='unsold-item' exact element={<UnsoldUI />} />
-                            </Route>
-                            <Route path='message' exact element={<MessageUI />} />
-                            <Route path='email' exact element={<EmailUI />} />
-                            <Route path='add-new-item' exact element={<AddNewItem /> } />
-                    </Routes>
-              </div>
-        </div>
+            <div className="top">
+                    <video src={videoBG} autoPlay muted loop/>
+            </div>
+            <div className="main">
+                    { !toogleSidebar && <div className="sidebar-main">
+                            <StaticSidebar />
+                    </div> }
+                    <div className={toogleSidebar ? 'full-width' : 'body-main'}>
+                            <Routes>
+                                    <Route path='/' element={<EmptyPage />} />
+                                    <Route path='dashboard' element={<DashboardUI />} >
+                                            <Route path='home' element={<HomeUI />}/>
+                                            <Route path='pages' element={<PagesUI />}/>
+                                            <Route path='quick-settings' element={<QuickSettings />}/>
+                                            <Route path='user-settings' element={<UsersSetting />}/>
+                                    </Route>
+                                    <Route path='sales'>
+                                            <Route path='orders' exact element={<OrdersUI />} />
+                                    </Route>
+                                    <Route path='items'>
+                                            <Route path='listed-item' exact element={<ListedUI />} />
+                                            <Route path='draft-item' exact element={<DraftUI />} />
+                                            <Route path='scheduled-item' exact element={<ScheduledUI />} />
+                                            <Route path='unsold-item' exact element={<UnsoldUI />} />
+                                    </Route>
+                                    <Route path='message' exact element={<MessageUI />} />
+                                    <Route path='email' exact element={<EmailUI />} />
+                                    <Route path='add-new-item' exact element={<AddNewItem /> } />
+                            </Routes>
+                    </div>
+            </div>
     </Router>
   )
 }

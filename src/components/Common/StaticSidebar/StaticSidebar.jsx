@@ -24,6 +24,11 @@ const allToogleOff = () => {
     })
 }
 
+const setBackgroundTheme = (color) => {
+    console.log("color", color);
+    localStorage.setItem('mainDashTheme', color)
+    window.location.reload()
+}
   return (
     <div className='static-sidebar'>
         <div className="profile">
@@ -192,6 +197,18 @@ const allToogleOff = () => {
                         <BsPatchPlusFill />
                         <h3>Add new plugin</h3>
                     </div>
+              </div>
+        </div>
+        <div className="section">
+              <div className="head">
+                    <span>Themes</span>
+                    {/* <MdEdit /> */}
+              </div>
+              <div className="card settings theme-container">
+                    <div className='color-theme dark' onClick={() => setBackgroundTheme('dark')}/>
+                    <div className='color-theme deepBlue' onClick={() => setBackgroundTheme('deepBlue')}/>
+                    <div className='color-theme orange' onClick={() => setBackgroundTheme('orange')}/>
+                    <div className='color-theme light' onClick={() => setBackgroundTheme('light')}/>
               </div>
         </div>
         <div className="section">

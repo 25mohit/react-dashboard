@@ -132,6 +132,32 @@
     align-items: center;
     justify-content: space-between;
 }
+.static-sidebar .section .theme-container{
+    justify-content: center;
+}
+.static-sidebar .section .settings .color-theme{
+    width: 2.5rem;
+    height: 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+.static-sidebar .section .settings .dark{
+    background-image: linear-gradient(135deg, rgb(32, 32, 32),rgb(52, 52, 52), rgb(110, 106, 106));
+}
+.static-sidebar .section .settings .deepBlue{
+    background-image: linear-gradient(135deg, rgb(43, 47, 114),rgb(53, 58, 142), rgb(92, 99, 195));
+}
+.static-sidebar .section .settings .orange{
+    background-image: linear-gradient(135deg, rgb(253, 168, 11),rgb(251, 187, 69), rgb(251, 213, 143));
+}
+.static-sidebar .section .settings .light{
+    background-image: linear-gradient(135deg, rgb(189, 189, 189),rgb(224, 224, 224), rgb(255, 255, 255));
+}
+.static-sidebar .section .settings .color-theme:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 1px rgba(72, 72, 72, 0.716);
+    transition: 0.6s;
+}
 
 
 /* DASHBOARD  */
