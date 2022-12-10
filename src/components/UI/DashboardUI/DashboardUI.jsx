@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { ImHome } from 'react-icons/im'
+import { TbLayoutCards } from 'react-icons/tb'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
 import { MdOutlineSettingsAccessibility } from 'react-icons/md'
 import { RiPagesFill, RiSettingsLine } from 'react-icons/ri'
@@ -26,6 +27,9 @@ const DashboardUI = () => {
                 </Link>
                 <Link to='/dashboard/pages' className={ location === 'pages' ? 'active' : '' } onClick={ () => setToogleActive(2)}>
                     <p><RiPagesFill />&nbsp;Pages</p>
+                </Link>
+                <Link to='/dashboard/cards' className={ location === 'cards' ? 'active' : '' } onClick={ () => setToogleActive(5)}>
+                    <p><TbLayoutCards />&nbsp;Cards</p>
                 </Link>
                 <Link to='/dashboard/quick-settings' className={ location === 'quick-settings' ? 'active' : '' } onClick={ () => setToogleActive(3)}>
                     <p><RiSettingsLine />&nbsp;Quick Setting</p>
