@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
-import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
-import { SiJirasoftware } from "react-icons/si"
-import { FiSlack } from "react-icons/fi"
-import { HiUserGroup } from "react-icons/hi"
-import { GoSettings } from "react-icons/go"
-import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
-import { FaStickyNote, FaUserAlt } from "react-icons/fa"
-import { MdAccountBalance, MdEdit, MdEmail, MdTaskAlt } from "react-icons/md"
-import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 import { Link } from 'react-router-dom'
+import { FiSlack } from "react-icons/fi"
+import { GoSettings } from "react-icons/go"
+import { HiUserGroup } from "react-icons/hi"
+import { SiJirasoftware } from "react-icons/si"
+import { FaStickyNote, FaUserAlt } from "react-icons/fa"
+import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
+import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
+import { MdAccountBalance, MdEdit, MdEmail, MdTaskAlt } from "react-icons/md"
+import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
+import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 
 const StaticSidebar = () => {
 const [toogleOption, setToogleOption] = useState({

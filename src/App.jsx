@@ -19,6 +19,7 @@ import PagesUI from './components/UI/DashboardUI/TabsUI/PagesUI'
 import QuickSettings from './components/UI/DashboardUI/TabsUI/QuickSettings'
 import UsersSetting from './components/UI/DashboardUI/TabsUI/UsersSetting'
 import EmailUI from './components/UI/EmailUI/EmailUI'
+import CardsUI from './components/UI/DashboardUI/TabsUI/CardsUI'
 
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
@@ -38,6 +39,7 @@ function App() {
                                     <Route path='dashboard' element={<DashboardUI />} >
                                             <Route path='home' element={<HomeUI />}/>
                                             <Route path='pages' element={<PagesUI />}/>
+                                            <Route path='cards' element={<CardsUI />}/>
                                             <Route path='quick-settings' element={<QuickSettings />}/>
                                             <Route path='user-settings' element={<UsersSetting />}/>
                                     </Route>

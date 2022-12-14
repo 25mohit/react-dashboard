@@ -155,7 +155,7 @@
 }
 .static-sidebar .section .settings .color-theme:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 10px 1px rgba(72, 72, 72, 0.716);
+    box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
     transition: 0.6s;
 }
 
@@ -209,16 +209,9 @@
 }
 .dashboard-main .nevbar > a {
     display: flex;
-    /* background-color: red; */
-    /* align-items: center; */
+    user-select: none;
     color: rgb(147, 147, 147);
 }
-/* .dashboard-main .nevbar > div {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    color: rgb(147, 147, 147);
-} */
 
 .dashboard-main .nevbar .active{
     color: rgb(67, 67, 67);
@@ -315,6 +308,17 @@
     height: 30rem;
     max-height: 30rem;
     overflow: auto;
+}
+
+
+/* DASHBOARD CARDS UI */
+.cards-main{
+    background-color: red;
+    padding:0.7rem 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 
