@@ -238,6 +238,7 @@
     transition: 0.5s;
 }
 .dashboard-home{
+    /* background-color: red; */
     padding:0.7rem 0;
     border-radius: 10px;
     box-sizing: border-box;
@@ -313,18 +314,162 @@
 
 /* DASHBOARD CARDS UI */
 .cards-main{
-    background-color: red;
+    max-width: 100%;
+    /* background-color: red; */
     padding:0.7rem 0;
     border-radius: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
+.cards-main .row{
+    display: flex;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.2rem 0;
+    box-sizing: border-box;
+    /* background-color: green; */
+    gap: 2rem;
+}
+.cards-main .row-heading{
+    /* background-color: red; */
+    color: rgb(107, 107, 107);
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    user-select: none;
+}
+
+
+/* PREMIUM CARD UI */
+.premium-card-UI{
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    min-width: 15rem;
+    backdrop-filter: blur(1px);
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 40px;
+    align-items: center;
+}
+.premium-card-UI:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 2px rgba(192, 190, 190,0.6);
+    transition: 0.6s;
+}
+.original-card{
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgb(237, 237, 237);
+}
+.red-card{
+    background-color: rgba(255, 25, 25, 0.7);
+    border: 2px solid rgba(255, 255, 255,0.5);
+    color: white;
+}
+.green-card{
+    background-color: rgba(0, 201, 90, 0.7);
+    border: 2px solid rgba(0, 255, 47, 0.329);
+}
+.orange-card{
+    background-color: rgba(255, 182, 12, 0.6);
+    border: 2px solid rgba(255, 255, 255,0.5);
+}
+.yellow-card{
+    background-color: rgba(251, 255, 12, 0.6);
+    border: 2px solid rgba(255, 255, 255,0.5);
+}
+.blue-card{
+    background-color: rgba(12, 130, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255,0.5);
+}
+.white-card{
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255,0.5);
+}
+.red-card .underline{
+    background-color: rgb(207, 0, 0) !important;
+}
+.green-card .underline{
+    background-color: rgb(0, 169, 51) !important;
+}
+.blue-card .underline{
+    background-color: rgb(22, 99, 215) !important;
+}
+.orange-card .underline{
+    background-color: rgb(216, 142, 5) !important;
+}
+.premium-card-UI .underline{
+    background-color: rgb(227, 227, 0);
+    height: 3px;
+    width: 100%;
+    margin: 1rem 0;
+}
+.premium-card-UI .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.premium-card-UI h3{
+    user-select: none;
+}
+.premium-card-UI .container h1{
+    font-size: 3rem;
+    color: rgb(71, 71, 71);
+}
+.premium-card-UI .container p{
+    margin-top: 0.8rem;
+}
+.green-card .container h1, .orange-card .container h1, .red-card .container h1, .blue-card .container h1{
+    color: white !important;
+}
+.green-card .container span,.red-card .container span, .orange-card .container span,.red-card .container span, .blue-card .container span{
+    color: white !important;
+}
+.yellow-card .container span{
+    color: rgb(152, 89, 89) !important;
+}
+.premium-card-UI .container span{
+    color: rgb(161, 161, 161);
+    margin: 1rem 0;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size: 0.8rem;
+}
+.premium-card-UI .container  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.green-card .container ul li, .orange-card .container ul li, .red-card .container ul li,  .blue-card .container ul li{
+    color: white !important;
+}
+.premium-card-UI .container  ul li{
+    font-family: 'Raleway', sans-serif;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: rgb(92, 92, 92);
+}
+.premium-card-UI .container  ul li:hover{
+    color: black;
+    transition: 0.6s;
+}
+.premium-card-UI .container  button{
+    margin: 1rem 0;
+    background-color: #C68FFF;
+    color: white;
+    user-select: none;
+    padding: 0.8rem 1.2rem;
+}
+.premium-card-UI .container  button:hover{
+    background-color: #b878fc;
+    transition: 0.6s;
+}
 
 
 /* MOST SOLD SELLS PRODUCTS LIST */
 .most-sold{
-    /* background-color: gray; */
     box-sizing: border-box;
     padding-top: 0.5rem;
 }
