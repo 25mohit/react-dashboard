@@ -27,9 +27,9 @@ function App() {
   return (
     <Router>
             <div className="top">
-                    <video src={videoBG} autoPlay muted loop/>
+                    {/* <video src={videoBG} autoPlay muted loop/> */}
             </div>
-            <div className="main">
+            {/* <div className="main">
                     { !toogleSidebar && <div className="sidebar-main">
                             <StaticSidebar />
                     </div> }
@@ -57,7 +57,7 @@ function App() {
                                     <Route path='add-new-item' exact element={<AddNewItem /> } />
                             </Routes>
                     </div>
-            </div>
+            </div> */}
     </Router>
   )
 }
