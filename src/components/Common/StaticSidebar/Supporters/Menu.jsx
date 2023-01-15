@@ -7,25 +7,18 @@ const Menu = ({ option, currentState }) => {
 
     const [toogleOption, setToogleOption] = useState('')
     const [open, setOpen] = useState(false)
-    const [currentURL, setCurrentURL] = useState('')
+    const [selected, setSelected] = useState(false)
 
     const toogleHandler = ( option ) => {
         setToogleOption(option?.name)
         setOpen(!open)
     }
-    const URL = window.location.href?.split('/')?.[3]
 
-    useEffect(() => {
-        const location = window.location.href?.split('/')?.[3]
-        setCurrentURL(location)
-        console.log("location", location);
-    },[])
-    
   return (
     <div className={`menu ${currentState ? 'active' : ''}`}>
         <Link to={option?.link} onClick={() => toogleHandler(option)}>
-            <div >
-                { (currentURL === URL) && <div className='selected_div' />}
+            <div onClick={() => setSelected(true)}>
+                { selected && <div className='selected_div' />}
                 <MdAccountBalance id='icon'/>
                 { !currentState && <h4>{option.name}</h4> }
                 { option?.nested?.length > 0 && !currentState && <BsFillArrowRightCircleFill id='drop_icon'/> }
