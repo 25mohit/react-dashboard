@@ -3,6 +3,8 @@
 
 /* STATIC SIDEBAR  */
 .static-sidebar{
+    /* background-color: red; */
+    /* width: 60px; */
     border-radius: 25px;
     background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
     max-height: 100%;
@@ -12,21 +14,75 @@
     flex-direction: column;
     padding:0 0.5rem;
     box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+.static-sidebar.active{
+    width: 70px;
+    overflow: visible;
+    background-color: rgb(253, 72, 72);
+}
+.static-sidebar.active .profile{
+    /* background-color: orange; */
+    padding: 0.4rem;
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.static-sidebar.active .profile > div:nth-child(1) > div:nth-child(2){
+    display: none;
+}
+.static-sidebar.active .profile > div:nth-child(1) > div:nth-child(1){
+   /* background-color: blue; */
+   display: flex;
+   border-radius: 25px 25px 0 0;
+   align-items: center;
+   position: relative;
+}
+#toogle_icon{
+    position: absolute;
+    font-size: 1.3rem;
+    top: 0;
+    background-color: red;
+    border-radius: 50%;
+    right: -35px;
+    color: white;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+.static-sidebar.active .profile > div:nth-child(1) > div:nth-child(1) img{
+    width: 30px;
+    height: 30px;
+}
+.static-sidebar.active .profile > div:nth-child(2){
+    display: none;
 }
 .profile{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: space-between;
     padding:1.2rem 0.7rem;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(81, 81, 81,0.3);
 }
-.profile > div:nth-child(1) img{
+.profile > div {
+    display: flex;
+    align-items: center;
+}
+.profile > div:nth-child(2) {
+    display: flex;
+    align-items:flex-start;
+    cursor: pointer;
+}
+.profile > div > div:nth-child(1) img{
     width: 50px;
     height: 50px;
     border: 3.5px solid white;
     border-radius: 50%;
 }
-.profile > div:nth-child(2){
+.profile > div > div:nth-child(2){
     /* background-color: orange; */
     display: flex;
     margin-left: 0.7rem;
@@ -53,13 +109,70 @@
     transition: 0.6s;
     color: rgb(173, 113, 0);
 }
-.menu{
+.menu a{
     display: flex;
+    text-decoration: none;
+    color: rgb(62, 62, 62);
+    width: 100%;
     align-items: center;
-    flex-direction: column;
+}
+.menu a #drop_icon{
+    font-size: 1.4rem;
+}
+.menu a > div {
+    display: flex;
+    gap: 0.7rem;
+    margin: 0.3rem 0;
+    width: 100%;
+    justify-content: space-between;
+}
+.menu.active a > div {
+    justify-content: center;
+}
+.menu.active a{
+    position: relative;
+}
+.menu.active a .quick_name{
+    position: absolute;
+    left: 115px;
+    background-color: white;
+    color: #4f4f4f;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0.5rem 0.8rem rgba(0,0,0,0.2);
+    border-radius: 0.6rem;
+    padding: 0rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    line-height: 1.8rem;
+    user-select: none;
+    opacity: 0;
+}
+.menu a:hover .quick_name{
+    opacity: 1;
+}
+.menu.active .quick_name:hover{
+    display: none;
+}
+.menu > div i{
+    display: flex;
+}
+.menu a > div h4{
+    width: 100%;
 }
 .menu:hover{
     cursor: pointer;
+}
+/* .menu .children{
+    background-color: red;
+} */
+.menu .children h5{
+    color: rgb(100, 100, 100);
+    /* padding: 0.3rem; */
+    font-size: 0.8rem;
+    width: 80%;
+    margin: 0.6rem 0;
+    margin-left: 1.8rem;
 }
 .menu .notify{
     background-color: red;
@@ -73,35 +186,8 @@
     border-radius: 50%;
     font-weight: bold;
 }
-.menu .sub-menu{
-    display: flex;
-    margin-top: 0.5rem;
-    flex-direction: column;
-    padding-left: 2rem;
-    box-sizing: border-box;
-}
-.menu .sub-menu h4{
-    margin: 0.4rem 0;
-    width: 100%;
-    text-align: left;
-    color: rgb(55, 55, 55);
-}
-.menu .sub-menu h4:hover{
-    color: black;
-}
-.menu > div  {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-.menu > div > div {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-}
-.menu > div > div #icon{
-    font-size: 1.3rem;
+.menu a #icon{
+    font-size: 1.1rem;
 }
 .static-sidebar .section .card{
     border-radius: 15px;

@@ -4,178 +4,59 @@ import { FiSlack } from "react-icons/fi"
 import { GoSettings } from "react-icons/go"
 import { HiUserGroup } from "react-icons/hi"
 import { SiJirasoftware } from "react-icons/si"
+import { IoIosArrowBack } from "react-icons/io"
 import { FaStickyNote, FaUserAlt } from "react-icons/fa"
 import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
 import { MdAccountBalance, MdEdit, MdEmail, MdTaskAlt } from "react-icons/md"
 import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
+import { SidebarOption } from './Options'
 import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
+import Menu from './Supporters/Menu'
 
-const StaticSidebar = () => {
-const [toogleOption, setToogleOption] = useState({
-    sales:false,
-    items:false,
-})
+const StaticSidebar = ({ toogle, currentState }) => {
 
-const allToogleOff = () => {
-    setToogleOption({
-        sales:false,
-        items:false,
-    })
-}
+    const allToogleOff = () => {
+        
+    }
 
-const setBackgroundTheme = (color) => {
-    console.log("color", color);
-    localStorage.setItem('mainDashTheme', color)
-    window.location.reload()
-}
+    const setBackgroundTheme = (color) => {
+        console.log("color", color);
+        localStorage.setItem('mainDashTheme', color)
+        window.location.reload()
+    }
+    console.log("SidebarOption", SidebarOption);
+    const toogleHandler = () => {
+        toogle(!currentState)
+    }
+
   return (
-    <div className='static-sidebar'>
+    <div className={`static-sidebar ${currentState ? 'active' : ''}`}>
         <div className="profile">
             <div>
-                <img src={ Admin } alt="" />
+                <div>
+                    <img src={ Admin } alt="" />
+                    { currentState && <IoIosArrowBack id='toogle_icon' onClick={toogleHandler}/> }
+                </div>
+                <div>
+                    <span>Good Day🤚</span>
+                    <h3>Mohit Agarwal</h3>
+                </div>
             </div>
             <div>
-                <span>Good Day🤚</span>
-                <h3>Mohit Agarwal</h3>
+                <IoIosArrowBack onClick={toogleHandler}/>
             </div>
         </div>
         <div className="section">
               <div className="head">
-                  <span>Menu: <strong>6</strong></span>
+                  <span>Menu { !currentState && <strong>: 6</strong>}</span>
                   <span><BsFolderMinus id='toogle-all' onClick={allToogleOff}/></span>
               </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <RiDashboardFill id='icon'/>
-                            <h4><Link to='/dashboard/home'>Dashboard</Link></h4>
-                        </div>
-                    </div>
-                    <div></div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <BsFillHandbagFill id='icon'/>
-                            <h4>Orders</h4>
-                        </div>
-                        <div>
-                            { !toogleOption.sales ? 
-                                    <BsFillArrowRightCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, sales: true})}/> :
-                                    <BsFillArrowDownCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, sales: false})}/> }
-                        </div>
-                    </div>
-                    { toogleOption.sales && <div className="sub-menu">
-                            <h4><Link to='/sales/orders'>Received</Link></h4>
-                            <h4>Pending</h4>
-                            <h4>Completed</h4>
-                    </div> }
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <BsBell id='icon'/>
-                            <h4>Notification</h4>
-                        </div>
-                        <div>
-                            <p className="notify">5</p>
-                        </div>
-                    </div>
-                    <div></div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <BsShop id='icon'/>
-                            <h4>Items</h4>
-                        </div>
-                        <div>
-                            { !toogleOption.items ? 
-                                    <BsFillArrowRightCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, items: true})}/> :
-                                    <BsFillArrowDownCircleFill id='icon' onClick={() => setToogleOption({...toogleOption, items: false})}/> }
-                        </div>
-                    </div>
-                    { toogleOption.items && <div className="sub-menu">
-                            <h4><Link to='/items/listed-item'>Listed</Link></h4>
-                            <h4><Link to='/items/draft-item'>Draft</Link></h4>
-                            <h4><Link to='/items/scheduled-item'>Scheduled</Link></h4>
-                            <h4><Link to='/items/unsold-item'>Unsold</Link></h4>
-                    </div> }
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <RiMessage2Fill id='icon'/>
-                            <h4><Link to='/message'>Message</Link></h4>
-                        </div>
-                        <div>
-                            <p className="notify">6</p>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <MdEmail id='icon'/>
-                            <h4><Link to='/email'>Email</Link></h4>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <BsGraphUp id='icon'/>
-                            <h4><Link to='/email'>Sales</Link></h4>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <MdTaskAlt id='icon'/>
-                            <h4><Link to='/email'>Tasks</Link></h4>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <HiUserGroup id='icon'/>
-                            <h4><Link to='/email'>Users</Link></h4>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-              </div>
-              <div className="menu">
-                    <div>
-                        <div>
-                            <MdAccountBalance id='icon'/>
-                            <h4>Account</h4>
-                        </div>
-                        <div />
-                    </div>
-                    <div></div>
-              </div>
+              {SidebarOption?.map((option, indx) =>
+                <Menu option={option} currentState={currentState}/>
+              )}
         </div>
-        <div className="section">
+        {/* <div className="section">
               <div className="head">
                   <span>Services: <strong>3</strong></span>
                   <MdEdit />
@@ -198,11 +79,10 @@ const setBackgroundTheme = (color) => {
                         <h3>Add new plugin</h3>
                     </div>
               </div>
-        </div>
+        </div> */}
         <div className="section">
               <div className="head">
                     <span>Themes</span>
-                    {/* <MdEdit /> */}
               </div>
               <div className="card settings theme-container">
                     <div className='color-theme dark' onClick={() => setBackgroundTheme('dark')}/>
@@ -211,7 +91,7 @@ const setBackgroundTheme = (color) => {
                     <div className='color-theme light' onClick={() => setBackgroundTheme('light')}/>
               </div>
         </div>
-        <div className="section">
+        {/* <div className="section">
               <div className="head">
                   <span>Settings: <strong>6</strong></span>
                   <MdEdit />
@@ -224,7 +104,7 @@ const setBackgroundTheme = (color) => {
                   <div><RiSettings4Fill /></div>
                   <div><AiFillBulb /></div>
               </div>
-        </div>
+        </div> */}
     </div>
   )
 }

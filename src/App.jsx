@@ -27,12 +27,14 @@ function App() {
   return (
     <Router>
             <div className="top">
-                    {/* <video src={videoBG} autoPlay muted loop/> */}
+                    <video src={videoBG} autoPlay muted loop/>
             </div>
-            {/* <div className="main">
-                    { !toogleSidebar && <div className="sidebar-main">
-                            <StaticSidebar />
-                    </div> }
+            <div className="main">
+                    {/* { !toogleSidebar && */}
+                    <div className="sidebar-main">
+                            <StaticSidebar toogle={setToogleSidebar} currentState={toogleSidebar}/>
+                    </div> 
+                    {/* } */}
                     <div className={toogleSidebar ? 'full-width' : 'body-main'}>
                             <Routes>
                                     <Route path='/' element={<EmptyPage />} />
@@ -57,7 +59,7 @@ function App() {
                                     <Route path='add-new-item' exact element={<AddNewItem /> } />
                             </Routes>
                     </div>
-            </div> */}
+            </div>
     </Router>
   )
 }
