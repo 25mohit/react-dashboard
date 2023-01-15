@@ -1,5 +1,3 @@
-import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
-
 export const SidebarOption = [
     {
         link: 'dashboard/home',
@@ -7,10 +5,10 @@ export const SidebarOption = [
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'dashboard/home',
+        link: 'sales/orders',
         name: 'Orders',
         icon: 'fa-solid fa-bars',
-        children: [
+        nested: [
             {
                 link: '/sales/orders',
                 name: 'Received',
@@ -26,15 +24,15 @@ export const SidebarOption = [
         ]
     },
     {
-        link: 'dashboard/home',
+        link: 'notification',
         name: 'Notification',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: '',
+        link: 'items/listed-items',
         name: 'Items',
         icon: 'fa-solid fa-bars',
-        children: [
+        nested: [
             {
                 link: '/items/listed-items',
                 name: 'Listed',
@@ -64,22 +62,22 @@ export const SidebarOption = [
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'email',
+        link: 'sales',
         name: 'Sales',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'email',
+        link: 'tasks',
         name: 'Tasks',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'email',
+        link: 'users',
         name: 'Users',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'email',
+        link: 'account',
         name: 'Account',
         icon: 'fa-solid fa-bars'
     },

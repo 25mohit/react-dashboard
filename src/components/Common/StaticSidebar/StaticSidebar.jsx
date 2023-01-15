@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FiSlack } from "react-icons/fi"
 import { GoSettings } from "react-icons/go"
@@ -25,11 +25,20 @@ const StaticSidebar = ({ toogle, currentState }) => {
         localStorage.setItem('mainDashTheme', color)
         window.location.reload()
     }
-    console.log("SidebarOption", SidebarOption);
     const toogleHandler = () => {
         toogle(!currentState)
     }
 
+    const [URL, setURL] = useState('')
+    const [Active, setActive] = useState(false)
+
+    useEffect(() => {
+        const location = window.location.href?.split('/')?.[3]
+        console.log("location", location);
+        setURL(location)
+    },[Active])
+
+    console.log("URL", URL);
   return (
     <div className={`static-sidebar ${currentState ? 'active' : ''}`}>
         <div className="profile">
@@ -53,7 +62,7 @@ const StaticSidebar = ({ toogle, currentState }) => {
                   <span><BsFolderMinus id='toogle-all' onClick={allToogleOff}/></span>
               </div>
               {SidebarOption?.map((option, indx) =>
-                <Menu option={option} currentState={currentState}/>
+                <Menu option={option} currentState={currentState} URL={URL} setActive={setActive}/>
               )}
         </div>
         {/* <div className="section">
@@ -80,7 +89,7 @@ const StaticSidebar = ({ toogle, currentState }) => {
                     </div>
               </div>
         </div> */}
-        <div className="section">
+        {/* <div className="section">
               <div className="head">
                     <span>Themes</span>
               </div>
@@ -90,7 +99,7 @@ const StaticSidebar = ({ toogle, currentState }) => {
                     <div className='color-theme orange' onClick={() => setBackgroundTheme('orange')}/>
                     <div className='color-theme light' onClick={() => setBackgroundTheme('light')}/>
               </div>
-        </div>
+        </div> */}
         {/* <div className="section">
               <div className="head">
                   <span>Settings: <strong>6</strong></span>

@@ -31,7 +31,7 @@ function App() {
             </div>
             <div className="main">
                     {/* { !toogleSidebar && */}
-                    <div className="sidebar-main">
+                    <div className={`sidebar-main ${toogleSidebar ? 'small' : 'big'}`}>
                             <StaticSidebar toogle={setToogleSidebar} currentState={toogleSidebar}/>
                     </div> 
                     {/* } */}

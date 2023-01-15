@@ -19,7 +19,7 @@
 .static-sidebar.active{
     width: 70px;
     overflow: visible;
-    background-color: rgb(253, 72, 72);
+    /* background-color: rgb(253, 72, 72); */
 }
 .static-sidebar.active .profile{
     /* background-color: orange; */
@@ -94,7 +94,7 @@
     flex-direction: column;
     /* background-color: white; */
     border-bottom: 1px solid rgba(81, 81, 81,0.3);
-    gap: 1rem;
+    gap: 0.5rem;
 }
 .static-sidebar .section .head{
     display: flex;
@@ -121,10 +121,18 @@
 }
 .menu a > div {
     display: flex;
+    align-items: center;
     gap: 0.7rem;
-    margin: 0.3rem 0;
+    padding: 0.3rem 0;
+    margin: 0.2rem 0;
     width: 100%;
     justify-content: space-between;
+}
+.selected_div{
+    height: 17px;
+    width: 5px;
+    border-radius: 10px;
+    background-color: rgb(16, 181, 79);
 }
 .menu.active a > div {
     justify-content: center;
@@ -159,6 +167,7 @@
 }
 .menu a > div h4{
     width: 100%;
+    /* background-color: red; */
 }
 .menu:hover{
     cursor: pointer;

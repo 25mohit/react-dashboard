@@ -119,6 +119,12 @@ video{
     min-width: 20rem;
     padding: 0.5rem;
     box-sizing: border-box;
+    transition: all 1s ease;
+}
+.sidebar-main.small{
+  /* background-color: peru; */
+  width: fit-content;
+  min-width: fit-content;
 }
 .body-main{
     width: 80%;
