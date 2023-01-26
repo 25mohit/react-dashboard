@@ -27,15 +27,15 @@ function App() {
   return (
     <Router>
             <div className="top">
-                    <video src={videoBG} autoPlay muted loop/>
+                    {/* <video src={videoBG} autoPlay muted loop/> */}
             </div>
             <div className="main">
                     {/* { !toogleSidebar && */}
-                    <div className={`sidebar-main ${toogleSidebar ? 'small' : 'big'}`}>
+                    {/* <div className={`sidebar-main ${toogleSidebar ? 'small' : 'big'}`}> */}
                             <StaticSidebar toogle={setToogleSidebar} currentState={toogleSidebar}/>
-                    </div> 
+                    {/* </div>  */}
                     {/* } */}
-                    <div className={toogleSidebar ? 'full-width' : 'body-main'}>
+                    {/* <div className={toogleSidebar ? 'full-width' : 'body-main'}> */}
                             <Routes>
                                     <Route path='/' element={<EmptyPage />} />
                                     <Route path='dashboard' element={<DashboardUI />} >
@@ -58,7 +58,7 @@ function App() {
                                     <Route path='email' exact element={<EmailUI />} />
                                     <Route path='add-new-item' exact element={<AddNewItem /> } />
                             </Routes>
-                    </div>
+                    {/* </div> */}
             </div>
     </Router>
   )

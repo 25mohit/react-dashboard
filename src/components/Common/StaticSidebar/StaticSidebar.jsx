@@ -65,31 +65,7 @@ const StaticSidebar = ({ toogle, currentState }) => {
                 <Menu option={option} currentState={currentState} URL={URL} setActive={setActive}/>
               )}
         </div>
-        <div className="section">
-              <div className="head">
-                  <span>Services: <strong>3</strong></span>
-                  <MdEdit />
-              </div>
-              <div className="card">
-                    <div>
-                        <SiJirasoftware />
-                        <h3>Jira Software</h3>
-                    </div>
-                    <div>
-                        <FiSlack />
-                        <h3>Slack</h3>
-                    </div>
-                    <div>
-                        <SiJirasoftware />
-                        <h3>Intercom</h3>
-                    </div>
-                    <div>
-                        <BsPatchPlusFill />
-                        <h3>Add new plugin</h3>
-                    </div>
-              </div>
-        </div>
-        <div className="section">
+        { !currentState && <div className="section">
               <div className="head">
                     <span>Themes</span>
               </div>
@@ -99,8 +75,8 @@ const StaticSidebar = ({ toogle, currentState }) => {
                     <div className='color-theme orange' onClick={() => setBackgroundTheme('orange')}/>
                     <div className='color-theme light' onClick={() => setBackgroundTheme('light')}/>
               </div>
-        </div>
-        <div className="section">
+        </div> }
+        { !currentState && <div className="section">
               <div className="head">
                   <span>Settings: <strong>6</strong></span>
                   <MdEdit />
@@ -113,7 +89,7 @@ const StaticSidebar = ({ toogle, currentState }) => {
                   <div><RiSettings4Fill /></div>
                   <div><AiFillBulb /></div>
               </div>
-        </div>
+        </div> }
     </div>
   )
 }

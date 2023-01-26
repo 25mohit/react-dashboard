@@ -58,9 +58,9 @@ button:hover{
   /* box-shadow: 0px 0px 10px 4px rgba(128, 128, 128, 0.736); */
   transition: .6s;
 }
-.top{
+/* .top{
   width: 100%;
-}
+} */
 video{
   margin: -8px;
   position: fixed;
@@ -76,6 +76,7 @@ video{
  .draft-main .container::-webkit-scrollbar ,
  .empty-order::-webkit-scrollbar ,
  .dashboard-main::-webkit-scrollbar ,
+ .body-main-ui .body_container::-webkit-scrollbar ,
 .cards-main .row::-webkit-scrollbar ,
  .dashboard-main .header::-webkit-scrollbar ,
  .dashboard-home .container > div:nth-child(2)::-webkit-scrollbar ,
@@ -98,18 +99,15 @@ video{
     border-radius: 10px;
   }
   
-  /* Handle on hover */
-  .static-sidebar::-webkit-scrollbar-thumb:hover {
-    background: #f19711; 
-    cursor: pointer;
-  }
   .main{
     position: absolute;
-    padding: 0;
+    padding: 0.4rem 0.6rem;
+    box-sizing: border-box;
     margin: -8px;
     width: 100%;
+    gap: 0.6rem;
     max-width: 100vw;
-    background-color: rgba(237, 237, 237,0.1);
+    /* background-color: rgba(237, 237, 237,0.1); */
     backdrop-filter: blur(5px);
     height: 100vh;
     display: flex;
@@ -139,8 +137,15 @@ video{
 .body-main-ui{
     width: 100%;
     height: 100%;
+    max-height: 100%;
     border-radius: 25px;
-    padding:1.2rem 0.5rem;
+    padding:1.2rem 0.8rem;
     box-sizing: border-box;
     background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
+}
+.body-main-ui .body_container{
+  height: 100%;
+  border-radius: 15px;
+  max-height: 100%;
+  overflow: auto;
 }

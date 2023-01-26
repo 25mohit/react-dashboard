@@ -1,7 +1,9 @@
 const MainBody = props => {
   return (
     <div className='body-main-ui'>
-      {props.children}
+      <div className="body_container">
+        {props.children}
+      </div>
     </div>
   )
 }
