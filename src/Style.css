@@ -1,10 +1,15 @@
-
+.container_main_heading{
+    color: rgba(102, 102, 102, 0.849);
+    letter-spacing: 2px;
+    margin-left: 0.3rem;
+}
 
 
 /* STATIC SIDEBAR  */
 .static-sidebar{
     /* background-color: red; */
     width: 21rem;
+    max-width: 21rem;
     border-radius: 25px;
     background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
     max-height: 100%;
@@ -651,7 +656,7 @@
 
 /* EMPTY PAGE MESSAGE */
 .empty-page{
-    /* background-color: red; */
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -695,14 +700,17 @@
     padding:0 0.7rem;
     box-sizing: border-box;
     display: flex;
+    width: 100%;
     height: 100%;
+    gap: 1rem;
     justify-content: space-between;
 }
 .message-main .inbox{
-    width: 29%;
+    max-width: 22rem;
     box-sizing: border-box;
     border-radius: 25px;
     display: flex;
+    flex: 1;
     flex-direction: column;
 }
 .message-main .inbox .search input[type='text']{
@@ -797,9 +805,8 @@
     text-align: center;
 }
 .message-main .detail{
-    width: 69%;
+    flex: 2.4;
     border-radius: 25px;
-    /* padding:0.7rem; */
     box-sizing: border-box;
 }
 .empty{
@@ -835,13 +842,13 @@
     font-size: 1.6rem;
     font-weight: bold;
 }
-.detail .container{
+.message-main .detail .message_container{
     height: 100%;
     max-height: 100%;
     display: flex;
     flex-direction: column;
 }
-.detail .container .header{
+.message-main .detail .message_container .message_header{
     display: flex;
     align-items: center;
     height: 8%;
@@ -849,18 +856,18 @@
     border-bottom: 1px solid rgb(196, 196, 196);
     padding-bottom: 0.6rem;
 }
-.detail .container .header > div{
+.message-main .detail .message_container .message_header > div{
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-.detail .container .header > div:nth-child(1):hover{
+.message-main .detail .message_container .message_header > div:nth-child(1):hover{
     cursor: pointer;
 }
-.detail .container .header > div > div:nth-child(1){
+.message-main .detail .message_container .message_header > div > div:nth-child(1){
     position: relative;
 }
-.detail .container .header > div > div:nth-child(1) .active{
+.message-main .detail .message_container .message_header > div > div:nth-child(1) .active{
     position: absolute;
     bottom: 1px;
     right: 3px;
@@ -869,7 +876,7 @@
     width: 12px;
     border-radius: 50%;
 }
-.detail .container .header > div img{
+.message-main .detail .message_container .message_header > div img{
     width: 2.7rem;
     height: 2.7rem;
     border-radius: 50%;
@@ -877,28 +884,28 @@
     padding: 0.1rem;
     border: 2px solid blue;
 }
-.detail .container .header > div > div{
+.message-main .detail .message_container .message_header > div > div{
     display: flex;
     flex-direction: column;
     text-align: left;
 }
-.detail .container .header > div:nth-child(2) {
+.message-main .detail .message_container .message_header > div:nth-child(2) {
     gap: 2rem;
 }
-.detail .container .header > div:nth-child(2) #chat-icons{
+.message-main .detail .message_container .message_header > div:nth-child(2) #chat-icons{
     font-size: 1.4rem;
     color: rgb(53, 53, 254);
 }
-.detail .container .header > div:nth-child(2) #chat-icons:hover{
+.message-main .detail .message_container .message_header > div:nth-child(2) #chat-icons:hover{
     cursor: pointer;
     color: blue;
     transition: 0.5;
 }
-.detail .container  .chat-container{
+.message-main .detail .message_container  .chat-container{
     height: 85%;
     overflow: scroll;
 }
-.detail .container  .chat-container > div span{
+.message-main .detail .message_container  .chat-container > div span{
     background-color: rgba(220, 220, 220,0.5);
     border-radius: 25px;
     line-height: 26px;
@@ -907,33 +914,33 @@
     padding: 0.4rem 1rem;
     letter-spacing: 1px;
 }
-.detail .container  .chat-container > div span:hover{
+.message-main .detail .message_container  .chat-container > div span:hover{
     cursor: pointer;
 }
-.detail .container  .chat-container .left{
+.message-main .detail .message_container  .chat-container .left{
     display: flex;
     padding-right: 35%;
     box-sizing: border-box;
 }
-.detail .container  .chat-container .right {
+.message-main .detail .message_container  .chat-container .right {
     display: flex;
     padding-left: 35%;
     box-sizing: border-box;
     justify-content: right;
 }
-.detail .container  .chat-container .right span{
+.message-main .detail .message_container  .chat-container .right span{
     background-color: rgba(187, 255, 187,0.6);
     display: flex;
     color: green;
     justify-content: right;
 }
 
-.detail .container  .send-input{
+.message-main .detail .message_container  .send-input{
     width: 100%;
     max-height: 7%;
     position: relative;
 }
-.detail .container  .send-input  input[type='text']{
+.message-main .detail .message_container  .send-input  input[type='text']{
     width: 100%;
     padding: 0.7rem;
     box-sizing: border-box;
@@ -945,7 +952,7 @@
     padding-left: 1.5rem;
     background-color: rgba(236, 236, 236,0.3);
 }
-.detail .container .send-input #send-icon{
+.message-main .detail .container .send-input #send-icon{
     position: absolute;
     color: rgb(10, 113, 15) !important;
     top: 25%;
@@ -954,7 +961,7 @@
     bottom: 0;
     right: 0;
 }
-.detail .container .send-input #send-icon:hover{
+.message-main .detail .container .send-input #send-icon:hover{
     cursor: pointer;
 }
 
@@ -1161,23 +1168,13 @@
 
 
 /* LISTED MAIN */
-.listed-main{
-    /* background-color: aqua; */
-    padding:0 0.7rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    max-height: 100%;
-    justify-content: space-between;
-}
-.listed-main .header{
+ .header{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
-.listed-main .header > div {
+ .header > div {
     width: 20rem;
     border-radius: 10PX;
     box-shadow: 0px 0px 10px 2px rgba(124, 124, 124, 0.438);
@@ -1188,80 +1185,46 @@
     box-sizing: border-box;
 }
 
-.listed-main .header > div h2{
+ .header > div h2{
     font-size: 1.4rem;
     color: rgb(238, 238, 238);
 }
-.listed-main .header > div > div{
+ .header > div > div{
     display: flex;
     margin-top: 0.5rem;
     justify-content: space-between;
     align-items: center;
 }
-.listed-main .header > div > div p{
+ .header > div > div p{
     font-size: 1.5rem;
     color: white;
 }
-.listed-main .header > div > div #card-icon{
+ .header > div > div #card-icon{
     font-size: 2rem;
     color: rgb(216, 142, 3);
 }
-.listed-main .header > div > div #card-icon-3{
+ .header > div > div #card-icon-3{
     font-size: 2rem;
     color: rgb(255, 0, 55);
 }
-.listed-main .header > div:hover{
+ .header > div:hover{
     cursor: pointer;
     box-shadow: 0px 0px 12px 2px rgba(124, 123, 123, 0.737);
     transition: 0.6s;
 }
-.listed-main .header > div:nth-child(1){
+ .header > div:nth-child(1){
     background-color: #fdab1d7c;
     border: 1px solid #fdab1dc6;
 }
-.listed-main .header > div:nth-child(2){
+ .header > div:nth-child(2){
     background-color: #6975fe68;
     border: 1px solid #6975feaf;
 }
-.listed-main .header > div:nth-child(3){
+ .header > div:nth-child(3){
     background-color: #ff898794;
     border: 1px solid #ff8987d2;
 }
-.listed-main .container{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    max-height: 100%;
-    overflow: auto;
-}
-.listed-main .head {
-    margin: 1rem 0;
-    display: flex;
-    align-items: center;
-}
-.listed-main .head > div:nth-child(1){
-    width: 85%;
-}
-.listed-main .head > div:nth-child(2){
-    display: flex;
-    justify-content: center;
-    width: 15%;
-}
-.listed-main .head .categories-bar > div:nth-child(1){
-    /* background-color: red; */
-    width: 60%;
-    max-width: 60%;
-    /* overflow-x: scroll; */
-}
-.listed-main .head .categories-bar > div:nth-child(2){
-    /* background-color: green; */
-    width: 40%;
-    max-width: 40%;
-}
- .container .table{
-    max-height: 100%;
-    overflow: auto;
-}
+
 .table table{
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.589);
@@ -1344,66 +1307,13 @@
 
 
 /* ADD NEW ITEM */
-.add-new-item{
-    padding:0 0.7rem;
+.listed_items_head {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    max-height: 100%;
-}
-.add-new-item .head {
-    padding: 0.4rem 1rem;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.336);
     border-radius: 7px;
     display: flex;
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
-}
-.add-new-item .head p{
-    font-size: 0.8rem;
-    color: rgb(97, 97, 97);
-    user-select: none;
-    cursor: pointer;
-}
-.add-new-item .head div:nth-child(1) p{
-    font-size: 1.2rem;
-    color: rgb(71, 71, 71);
-    font-weight: 600;
-    cursor: pointer;
-}
-.add-new-item .head div{
-    display: flex;
-    align-items: center;
-}
-.add-new-item .head div img{
-    width: 30px;
-    height: 30px;
-    margin-right: 1rem;
-    border-radius: 50%;
-}
-.add-new-item .container{
-    /* background-color: rgba(234, 234, 234, 0.297); */
-    height: 100%;
-    max-height: 100%;
-    overflow: auto;
-    border-radius: 20px;
-    padding:0.7rem 0;
-    margin: 0.6rem 0;
-    display: flex;
-    flex-direction: column;
-}
-.add-new-item .container > div{
-    margin: 0.5rem 0;
-}
-.add-new-item .container > div label{
-    font-size: 1.2rem;
-    color: rgba(55, 55, 55, 0.768);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    letter-spacing: 1px;
 }
 .input-field-full{
     display: flex;
@@ -1453,6 +1363,7 @@
     gap: 1rem;
     justify-content: right;
 }
+
 .add-new-item .container footer button{
     padding: 0.6rem 1.3rem;
     font-size: 1rem;
@@ -1470,31 +1381,6 @@
     background-color: #fb1a1a;
     transition: 0.6s;
 }
-
-
-/* DRAFT MAIN UI */
-.draft-main{
-    padding:0 0.7rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    max-height: 100%;
-}
-.draft-main .container{
-    height: 100%;
-    max-height: 100%;
-    overflow: auto;
-}
-.draft-main .head{
-    margin-bottom: 0.5rem;
-}
-.draft-main .head h2{
-    color: #4f4f4f;
-    letter-spacing: 1.5px;
-    font-size: 1.4rem;
-}
-
 
 .categories-bar{
     display: flex;

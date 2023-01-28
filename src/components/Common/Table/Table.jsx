@@ -24,7 +24,6 @@ const Table = ({ tableData, columnData }) => {
         }
     }
 
-    console.log("columnData", columnData);
 
   return (
     <div className="table">
@@ -45,17 +44,19 @@ const Table = ({ tableData, columnData }) => {
                     <td><p>{data.title}</p></td>
                     <td><p>
                         <select>
-                            {data.size.map(size => 
-                                <option value="">{size}</option>
+                            {data.size.map((size, ind) => 
+                                <option value="" key={ind}>{size}</option>
                             )}
                         </select>
                         </p></td>
                     <td><p>{data.price}</p></td>
                     <td><p>{data.qty} Items</p></td>
-                    <td><p style={
-                        {backgroundColor:getPaymentColor(data.payment),
-                        padding:'0.3rem 0.6rem', color: 'white', borderRadius: '8px', fontSize: '0.9rem'}
-                        } className='payment-color'>{paymentType(data.payment)}</p></td>
+                    { !data?.actionIcons ?
+                        <td><p style={
+                            {backgroundColor:getPaymentColor(data.payment),
+                            padding:'0.3rem 0.6rem', color: 'white', borderRadius: '8px', fontSize: '0.9rem'}
+                            } className='payment-color'>{paymentType(data.payment)}</p></td> :
+                        <td>data</td> }
                 </tr> )}
             </tbody>
         </table>

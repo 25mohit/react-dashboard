@@ -107,8 +107,8 @@ const MessageUI = () => {
                         { welcomeScreen && <div className='empty'>
                             <h1> Welcome to your personalise message box </h1>
                         </div> }
-                        { !welcomeScreen && <div className="container">
-                            <div className="header">
+                        { !welcomeScreen && <div className="message_container">
+                            <div className="message_header">
                                 <div>
                                     <div>
                                         <img src={logo} alt="" />

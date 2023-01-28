@@ -1,154 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
-import { BsFillStopwatchFill, BsTrash } from 'react-icons/bs'
-import { AiFillCaretRight, AiFillEye } from 'react-icons/ai'
-import { MdOutlineSell } from 'react-icons/md'
-import { FaRegEdit } from 'react-icons/fa'
-import MessageCard from '../../Common/MessageCard/MessageCard'
-import { Link } from 'react-router-dom'
 import ITEMS_LIST_DATA from '../../../MocData/ORDERS_MOC_DATA'
+import CategoriesBar from '../../Common/CategoriesBar/CategoriesBar'
+import Table from '../../Common/Table/Table'
 
 const DraftUI = () => {
-    
-    const [deleteModal, setDeleteModal] = useState(false)
-    const [search, setSearch] = useState('')
     const [empty, setEmpty] = useState(false)
-    const [catType, setCatType] = useState(null)
-    const [currentCategory, setCurrentCategory] = useState('')
     const [searchFiltered, setSearchFiltered] = useState([])
-    const [categoryFilter, setCategoryFilter] = useState([])
-
-    const category = currentCategory
-
-    const paymentType = (type) => {
-        if(type==='cash'){
-            return 'Cash'
-        } else if(type==='online'){
-            return 'Online Banking'
-        } else if (type==='credit_card'){
-            return 'Credit Card'
-        } else if (type==='UPI'){
-            return 'UPI'
-        }
-    }
-
-    const getPaymentColor = (type) => {
-        if(type==='cash'){
-            return 'rgb(255, 66, 66)'
-        } else if(type==='online'){
-            return 'rgb(66, 120, 255)'
-        } else if (type==='credit_card'){
-            return 'rgb(255, 173, 66)'
-        } else if (type==='UPI'){
-            return 'rgb(66, 120, 255)'
-        }
-    }
-
-    useEffect(() => {
-        const filtered = categoryFilter?.filter(dt => dt.title.toLowerCase().includes(search.toLowerCase()))
-        setSearchFiltered(filtered)
-        if(filtered.length ===0){
-            setEmpty(true)
-        } else {
-            setEmpty(false)
-        }
-    },[search, categoryFilter])
-
-    const uniqueCategory = [...new Set(ITEMS_LIST_DATA?.map(category => category.category))]
-
-    const getCategory = (category) => {
-        if(category==='cloths'){
-            return 'Cloths'
-        } else if(category==='electronics'){
-            return 'Electronics'
-        } else if(category==="health_products"){
-            return 'Health Products'
-        } else if(category==='beauty_products'){
-            return 'Beauty Products'
-        }  else if(category==='medicle'){
-            return 'Medicles'
-        } else if(category==='applience'){
-            return 'Home Appliences'
-        }
-    }
-
-    const getCategoryType = (index, category) => {
-        setCatType(index)
-        setCurrentCategory(category)
-    }
-
-    const showAll = () => {
-        setCurrentCategory('')
-        setCatType(null)
-    }
-
-    useEffect(() => {
-        const catFilter = ITEMS_LIST_DATA?.filter(data => data.category === category)
-        setCategoryFilter(catFilter)
-        if(category===''){
-            setCategoryFilter(ITEMS_LIST_DATA)
-        }
-    },[category])
     
+    const columnData = [
+        { headingTitle: 'No.', headingValue: 'no' },
+        { headingTitle: 'Image', headingValue: 'no' },
+        { headingTitle: 'Title', headingValue: 'no' },
+        { headingTitle: 'Size', headingValue: 'no' },
+        { headingTitle: 'Price', headingValue: 'no' },
+        { headingTitle: 'Qty.', headingValue: 'no' },
+        { headingTitle: 'Actions', headingValue: 'no' },
+    ]
+
   return (
     <MainBody>
-        <div className="draft-main">
-            <div className="head">
-                <h2>Saved Items</h2>
-                <div className="categories-bar">
-                    <div>
-                        <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
-                        { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
-                    </div>
-                    <div>
-                        <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
-                        <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
-                    </div>
-                </div>
-            </div>
-            <div className="container">
-                    <div className="table">
-                        <table cellSpacing='0'>
-                            <thead>
-                                <tr>
-                                    <td><input type="checkbox" /></td>
-                                    <td><p>No.</p></td>
-                                    <td><p>Image</p></td>
-                                    <td><p>Title</p></td>
-                                    <td><p>Size</p></td>
-                                    <td><p>Price</p></td>
-                                    <td><p>Qty.</p></td>
-                                    <td><p>Actions</p></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                { searchFiltered.map((data, indx) => <tr key={indx}>
-                                    <td><input type="checkbox" name="" id="" /></td>
-                                    <td><p>{indx+1}</p></td>
-                                    <td><p></p></td>
-                                    <td><p>{data.title}</p></td>
-                                    <td><p>
-                                        <select>
-                                            {data.size.map(size => 
-                                                <option value="">{size}</option>)}
-                                        </select>
-                                        </p></td>
-                                    <td><p>{data.price}</p></td>
-                                    <td><p>{data.qty} Items</p></td>
-                                    <td>
-                                        <AiFillEye id='table-action' className='show-icon'/>
-                                        <BsTrash id='table-action' className='delete-icon' onClick={() => setDeleteModal(true)}/>
-                                        <Link to='/add-new-item'><FaRegEdit id='table-action' className='edit-icon'/></Link>
-                                        <BsFillStopwatchFill id='table-action' className='time-icon'/>
-                                        <MdOutlineSell id='table-action' className='sell-icon'/>
-                                    </td>
-                                </tr> )}
-                            </tbody>
-                        </table>
-                        { deleteModal && <MessageCard type="delete" onCancel={() => setDeleteModal(false)}/> }
-                    </div>
-                </div>
-            </div>
+        <h2 className='container_main_heading'>Saved Items</h2>
+        <CategoriesBar allData={ITEMS_LIST_DATA} returnData={setSearchFiltered} isEmpty={setEmpty}/>
+        <Table tableData={searchFiltered} columnData={columnData}/>
     </MainBody>
   )
 }

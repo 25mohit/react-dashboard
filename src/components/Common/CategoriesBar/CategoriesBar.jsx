@@ -8,17 +8,11 @@ const CategoriesBar = ({ allData, returnData, isEmpty }) => {
 
     const [search, setSearch] = useState('')
     const [categoryFilter, setCategoryFilter] = useState([])
-    // const [empty, isEmpty] = useState(false)
     const [currentCategory, setCurrentCategory] = useState('')
     
     useEffect(() => {
         const filtered = categoryFilter?.filter(dt => dt.title.toLowerCase().includes(search.toLowerCase()))
         setSearchFiltered(filtered)
-        // if(filtered.length ===0){
-        //     setEmpty(true)
-        // } else {
-        //     setEmpty(false)
-        // }
     },[search, categoryFilter])
 
     useEffect(() => {
@@ -32,10 +26,12 @@ const CategoriesBar = ({ allData, returnData, isEmpty }) => {
     useEffect(() => {
         const filtered = categoryFilter?.filter(dt => dt.title.toLowerCase().includes(search.toLowerCase()))
         returnData(filtered)
-        if(filtered.length ===0){
-            isEmpty(true)
-        } else {
-            isEmpty(false)
+        if(isEmpty !== undefined){
+            if(filtered.length ===0){
+                isEmpty(true)
+            } else {
+                isEmpty(false)
+            } 
         }
     },[search, categoryFilter])
 
@@ -43,15 +39,6 @@ const CategoriesBar = ({ allData, returnData, isEmpty }) => {
         setCurrentCategory('')
         setCatType(null)
     }
-    useEffect(() => {
-        const filtered = categoryFilter?.filter(dt => dt.title.toLowerCase().includes(search.toLowerCase()))
-        returnData(filtered)
-        if(filtered.length ===0){
-            isEmpty(true)
-        } else {
-            isEmpty(false)
-        }
-    },[search, categoryFilter])
 
     const getCategory = (category) => {
         if(category==='cloths'){
@@ -76,24 +63,17 @@ const CategoriesBar = ({ allData, returnData, isEmpty }) => {
         setCurrentCategory(category)
     }
 
-    // useEffect(() => {
-    //     const catFilter = ITEMS_LIST_DATA?.filter(data => data.category === category)
-    //     setCategoryFilter(catFilter)
-    //     if(category===''){
-    //         setCategoryFilter(ITEMS_LIST_DATA)
-    //     }
-    // },[category])
   return (
     <div className="categories-bar">
-                <div>
-                    <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
-                    { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
-                </div>
-                <div>
-                    <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
-                    <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
-                </div>
-            </div>
+        <div>
+            <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
+            { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
+        </div>
+        <div>
+            <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
+            <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
+        </div>
+    </div>
   )
 }
 

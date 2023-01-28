@@ -40,6 +40,9 @@ textarea{
   max-height: 13rem;
 }
 button{
+  text-decoration: none;
+  display: flex;
+  color: white !important;
   border: none;
   border-radius: 10px;
   font-size: 0.9rem;
@@ -72,6 +75,7 @@ video{
 .static-sidebar::-webkit-scrollbar ,
 .add-new-item .container::-webkit-scrollbar,
  .inbox .container::-webkit-scrollbar, 
+ .message-main .detail .message_container  .chat-container::-webkit-scrollbar, 
  .detail .container  .chat-container::-webkit-scrollbar ,
  .draft-main .container::-webkit-scrollbar ,
  .empty-order::-webkit-scrollbar ,

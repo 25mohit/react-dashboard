@@ -29,12 +29,12 @@ export const SidebarOption = [
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'items/listed-items',
+        link: 'items/listed-item',
         name: 'Items',
         icon: 'fa-solid fa-bars',
         nested: [
             {
-                link: '/items/listed-items',
+                link: '/items/listed-item',
                 name: 'Listed',
             },
             {
