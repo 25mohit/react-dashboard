@@ -12,7 +12,6 @@ import { MdAccountBalance, MdEdit, MdEmail, MdTaskAlt } from "react-icons/md"
 import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SidebarOption } from './Options'
 import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
-import Menu from './Supporters/Menu'
 
 const StaticSidebar = ({ toogle, currentState }) => {
 
@@ -29,16 +28,26 @@ const StaticSidebar = ({ toogle, currentState }) => {
         toogle(!currentState)
     }
 
-    const [URL, setURL] = useState('')
-    const [Active, setActive] = useState(false)
+    const [crntIndx, setCrntIndx] = useState(null)
+    const [toogleOption, setToogleOption] = useState('')
+    const [activeOpt, setActiveOpt] = useState('')
 
     useEffect(() => {
-        const location = window.location.href?.split('/')?.[3]
-        console.log("location", location);
-        setURL(location)
-    },[Active])
+        setActiveOpt(window.location.href.split('/')?.[3])
+        setToogleOption(window.location.href.split('/')?.[3])
+        setCrntIndx(Number(localStorage.getItem('selectedItemIndx')))
+      },[])
 
-    console.log("URL", URL);
+    const optionChangeHandler = (opt, ind) => {
+        console.log(opt);
+        localStorage.setItem('selectedItemIndx', ind)
+        setToogleOption(opt?.name)
+        setActiveOpt(opt?.name)
+        setCrntIndx(ind)
+    }
+
+    console.log("currentState", currentState);
+
   return (
     <div className={`static-sidebar ${currentState ? 'active' : ''}`}>
         <div className="profile">
@@ -62,7 +71,23 @@ const StaticSidebar = ({ toogle, currentState }) => {
                   <span><BsFolderMinus id='toogle-all' onClick={allToogleOff}/></span>
               </div>
               {SidebarOption?.map((option, indx) =>
-                <Menu option={option} currentState={currentState} URL={URL} setActive={setActive}/>
+                <div key={indx} className={`menu ${currentState ? 'active' : ''}`} onClick={() => optionChangeHandler(option, indx)}>
+                <Link to={option?.link} >
+                    <div>
+                        <div className={((toogleOption === activeOpt) && crntIndx === indx) ? 'selected_div' : 'non-selected'} />
+                        <MdAccountBalance id='icon'/>
+                        { !currentState && <h4>{option.name}</h4> }
+                        { option?.nested?.length > 0 && !currentState && <BsFillArrowRightCircleFill id='drop_icon'/> }
+                    </div>
+                { currentState && <span className='quick_name'>{option.name}</span>}
+                </Link>
+                {
+                    (toogleOption === option?.name) && open && !currentState && option?.nested?.length > 0 && option?.nested?.map((option, indx) =>  
+                        <div className="children" key={indx}>
+                            <Link to={option?.link}><h5>{option?.name}</h5></Link>
+                        </div>
+                )}
+            </div>
               )}
         </div>
         { !currentState && <div className="section">

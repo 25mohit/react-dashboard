@@ -7,7 +7,7 @@ const PremiumCard = ({ design }) => {
     <div className={`premium-card-UI ${design}-card`} >
         <h3>Basic</h3>
         <div className="underline" />
-        <div className="container">
+        <div className="container-card">
             <h1>$99</h1>
             <p>Price Example</p>
             <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>

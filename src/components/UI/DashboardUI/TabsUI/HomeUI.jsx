@@ -28,7 +28,7 @@ const HomeUI = () => {
                 <p>Weekly Sales</p>
             </div>
         </div>
-        <div className="container">
+        <div className="container_home">
             <div>
                 <DashboardChart />
             </div>

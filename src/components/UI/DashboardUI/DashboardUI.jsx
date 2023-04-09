@@ -14,7 +14,7 @@ const DashboardUI = () => {
   return (
     <MainBody>
         <div className="dashboard-main">
-            <div className="header" >
+            <div className="header-dash" >
                 <h1>Welcome to your Premium Complete Customiziable Dashboard</h1>
                 <div>
                     <p>Completed eCommerce Solution.</p>
@@ -38,7 +38,7 @@ const DashboardUI = () => {
                     <p><MdOutlineSettingsAccessibility />&nbsp;User Setting</p>
                 </Link>
             </div>
-            <div className="container">
+            <div className='dashboard_container_section'>
                 <Outlet />
             </div>
         </div>
