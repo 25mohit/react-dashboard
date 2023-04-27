@@ -18,9 +18,8 @@ const StaticSidebar = ({ toogle, currentState }) => {
     const allToogleOff = () => {
         
     }
-
+    
     const setBackgroundTheme = (color) => {
-        console.log("color", color);
         localStorage.setItem('mainDashTheme', color)
         window.location.reload()
     }
@@ -39,14 +38,11 @@ const StaticSidebar = ({ toogle, currentState }) => {
       },[])
 
     const optionChangeHandler = (opt, ind) => {
-        console.log(opt);
         localStorage.setItem('selectedItemIndx', ind)
         setToogleOption(opt?.name)
         setActiveOpt(opt?.name)
         setCrntIndx(ind)
     }
-
-    console.log("currentState", currentState);
 
   return (
     <div className={`static-sidebar ${currentState ? 'active' : ''}`}>

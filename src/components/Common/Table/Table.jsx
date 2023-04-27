@@ -38,24 +38,24 @@ const Table = ({ tableData, columnData }) => {
                 </tr>
             </thead>
             <tbody>
-                { tableData.map((data, indx) => <tr key={indx}>
+                { tableData?.map((data, indx) => <tr key={indx}>
                     <td><p>{indx+1}</p></td>
                     <td><p></p></td>
-                    <td><p>{data.title}</p></td>
+                    <td><p>{data?.title}</p></td>
                     <td><p>
                         <select>
-                            {data.size.map((size, ind) => 
+                            {data?.size?.map((size, ind) => 
                                 <option value="" key={ind}>{size}</option>
                             )}
                         </select>
                         </p></td>
-                    <td><p>{data.price}</p></td>
-                    <td><p>{data.qty} Items</p></td>
+                    <td><p>{data?.price}</p></td>
+                    <td><p>{data?.qty} Items</p></td>
                     { !data?.actionIcons ?
                         <td><p style={
-                            {backgroundColor:getPaymentColor(data.payment),
+                            {backgroundColor:getPaymentColor(data?.payment),
                             padding:'0.3rem 0.6rem', color: 'white', borderRadius: '8px', fontSize: '0.9rem'}
-                            } className='payment-color'>{paymentType(data.payment)}</p></td> :
+                            } className='payment-color'>{paymentType(data?.payment)}</p></td> :
                         <td>data</td> }
                 </tr> )}
             </tbody>

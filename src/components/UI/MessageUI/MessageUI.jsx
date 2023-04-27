@@ -83,7 +83,7 @@ const MessageUI = () => {
                                 filteredEmail?.map((data, indx) => 
                                 <div key={indx} className={idx === indx ? 'active' : ''} onClick={() => toogle(indx)}>
                                         <div>
-                                            <img src={data.image} />
+                                            <img src={data.image} loading='lazy' />
                                             <div>
                                                 <p>{data.name}</p>
                                                 <span className={data.notification !== '' ? 'notify' : ''}>{data.message}</span>
