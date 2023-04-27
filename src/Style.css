@@ -1068,6 +1068,174 @@
     color: rgb(238, 238, 238);
 }
 
+/* EMAIL UI */
+.email-main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.email-main > nav {
+    padding:0.4rem 0.1rem;
+    height: var(--email-nav-height);
+    box-sizing: border-box;
+}
+.email-main > nav > div {
+    border-radius: 15px;
+    gap: 0.2rem;
+    padding: 0.2rem 0.3rem;
+    box-sizing: border-box;
+}
+.email-main > nav .toogle-bar{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgba(239, 239, 239, 0.438);
+}
+.email-main > nav .toogle-bar .toogle-btn{
+    color: #434343;
+    user-select: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.8px;
+    border-radius: 10px;
+    padding: 0.3rem 0.6rem;
+}
+.email-main > nav .toogle-bar .toogle-btn:hover{
+    background-color: rgb(241, 241, 241);
+    transition: 0.6s;
+    cursor: pointer;
+}
+.email-main > nav .toogle-bar .active{
+    background-color: white;
+}
+.email-main > nav .inbox-controls{
+    gap: 0.9rem;
+}
+.email-main > nav .inbox-controls .filter{
+    gap: 0.4rem;
+    width: fit-content !important;
+    /* font-size: 0.9rem !important; */
+}
+.email-main > nav .inbox-controls .filter-icon{
+    height: 1.2rem;
+    width: 1.2rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgb(193, 192, 192);
+    color: #3e3e3e;
+    font-size: 0.9rem;
+    user-select: none;
+    background-color: rgba(251, 248, 245, 0.259);
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.email-main > nav .inbox-controls .filter-icon:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.692);
+    transition: 0.6s;
+    border: 1px solid rgba(255, 255, 255, 0.692);
+}
+.email-main .email-container{
+    padding: 0.4rem;
+    gap: 2rem;
+    box-sizing: border-box;
+    /* background-color: rgba(255, 255, 255, 0.29); */
+    height: calc(100% - var(--email-nav-height));
+    border-radius: 5px;
+}
+.email-main .email-container .inbox{
+    width: var(--email-inbox-width);
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: 0.4rem;
+    gap: 0.7rem;
+    box-sizing: border-box;
+}
+.email-card{
+    border: 1px solid rgb(227, 227, 227);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0.6rem;
+    background-color: rgba(255, 255, 255, 0.267);
+    border-radius: 15px;
+    box-sizing: border-box;
+    height: fit-content;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor: pointer;
+}
+.email-card.active{
+    border: 2px solid purple;
+}
+
+.email-card .logo{
+    color: purple;
+    height: fit-content;
+    border-bottom: 2px solid purple;
+}
+.email-card .center{
+    gap: 0.5rem;
+    width: 70%;
+}
+.email-card .email-time{
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #727272;
+}
+.email-card .tag{
+    font-size: 0.6rem;
+    margin-left: 0.5rem;
+    color: green;
+    font-weight: bold;
+}
+.email-card .email-subject{
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: hsl(0, 0%, 48%);
+}
+.email-body{
+    width: calc(97% - var(--email-inbox-width));
+    background-color: rgba(255, 255, 255, 0.711);
+    height: calc(100% - var(--email-nav-height));
+    max-height: calc(100% - var(--email-nav-height));
+    overflow: auto;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.email-body> nav{
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+}
+.email-body > nav > div {
+    gap: 1rem;
+}
+.email-body > nav > div #icon{
+    width: 1.2rem;
+    color: rgb(82, 82, 82);
+    padding: 0.2rem;
+    cursor: pointer;
+    height: 1.2rem;
+}
+.email-body > nav > div #icon-border{
+    border: 1px solid rgb(181, 180, 180);
+    border-radius: 5px;
+    width: 1.2rem;
+    color: rgb(82, 82, 82);
+    padding: 0.2rem;
+    cursor: pointer;
+    height: 1.2rem;
+}
+.email-body > nav .center h3{
+    letter-spacing: 3px;
+    color: #2e2e2e;
+}
+.email-body > nav .center span{
+    font-size: 0.7rem;
+    color: gray;
+}
+
+
+
 
 /* LISTED MAIN */
  .header{
