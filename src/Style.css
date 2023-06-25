@@ -8,8 +8,8 @@
 /* STATIC SIDEBAR  */
 .static-sidebar{
     /* background-color: red; */
-    width: 21rem;
-    max-width: 21rem;
+    width: var(--sidebar-width);
+    max-width: var(--sidebar-width);
     border-radius: 25px;
     background-image: linear-gradient(to bottom, rgba(231,238,241,0.6), rgba(213,233,240,0.3));
     max-height: 100%;
@@ -1603,4 +1603,57 @@
 .payment-color{
     font-weight: 600;
     width: fit-content;
+}
+.login-form{
+    background-color: white;
+    width: 35%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding:1.3rem 1rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+    gap:2rem;
+    box-shadow: var(--main-box-shadow);
+}
+.login-form .top{
+    text-align: center;
+    /* padding-bottom: 0.7rem; */
+    /* border-bottom: 1px solid #a3a3a3ba; */
+}
+.login-form .top h2{
+    font-weight: 700;
+    color: var(--color-primary);
+}
+.login-form > form {
+    display: flex;
+    flex-direction: column;
+    gap:1.2rem;
+}
+.login-form > form .Input{
+    display: flex;
+    flex-direction: column;
+    /* padding: 0.7rem 0; */
+}
+.login-form > form .Input > label{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+.login-form > form .flex-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.login-form > form .flex-bar > div{
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.login-form > form .flex-bar .forget{
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+.login-form .label-line{
+    text-align: center;
 }

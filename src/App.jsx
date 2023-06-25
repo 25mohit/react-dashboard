@@ -3,7 +3,7 @@ import './Animation.css'
 import './App.css'
 import './CheckBoxStyle.css'
 import { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import StaticSidebar from './components/Common/StaticSidebar/StaticSidebar'
 import EmptyPage from './components/Common/EmptyPage/EmptyPage'
 import videoBG from './assets/Background/backgound_video.mp4'
@@ -21,6 +21,7 @@ import QuickSettings from './components/UI/DashboardUI/TabsUI/QuickSettings'
 import UsersSetting from './components/UI/DashboardUI/TabsUI/UsersSetting'
 import EmailUI from './components/UI/EmailUI/EmailUI'
 import CardsUI from './components/UI/DashboardUI/TabsUI/CardsUI'
+import MainRoutes from './Utils/Routes'
 
 function App() {
   const [toogleSidebar, setToogleSidebar] = useState(false)
@@ -28,37 +29,16 @@ function App() {
   return (
     <Router>
             <div className="top">
-                    {/* <video src={videoBG} autoPlay muted loop/> */}
+                    <video src={videoBG} autoPlay muted loop/>
             </div>
             <div className="main">
+                <MainRoutes />
                     {/* { !toogleSidebar && */}
                     {/* <div className={`sidebar-main ${toogleSidebar ? 'small' : 'big'}`}> */}
-                            <StaticSidebar toogle={setToogleSidebar} currentState={toogleSidebar}/>
                     {/* </div>  */}
                     {/* } */}
+                            {/* <StaticSidebar toogle={setToogleSidebar} currentState={toogleSidebar}/> */}
                     {/* <div className={toogleSidebar ? 'full-width' : 'body-main'}> */}
-                            <Routes>
-                                    <Route path='/' element={<EmptyPage />} />
-                                    <Route path='dashboard' element={<DashboardUI />} >
-                                            <Route path='home' element={<HomeUI />}/>
-                                            <Route path='pages' element={<PagesUI />}/>
-                                            <Route path='cards' element={<CardsUI />}/>
-                                            <Route path='quick-settings' element={<QuickSettings />}/>
-                                            <Route path='user-settings' element={<UsersSetting />}/>
-                                    </Route>
-                                    <Route path='sales'>
-                                            <Route path='orders' exact element={<OrdersUI />} />
-                                    </Route>
-                                    <Route path='items'>
-                                            <Route path='listed-item' exact element={<ListedUI />} />
-                                            <Route path='draft-item' exact element={<DraftUI />} />
-                                            <Route path='scheduled-item' exact element={<ScheduledUI />} />
-                                            <Route path='unsold-item' exact element={<UnsoldUI />} />
-                                    </Route>
-                                    <Route path='message' exact element={<MessageUI />} />
-                                    <Route path='email' exact element={<EmailUI />} />
-                                    <Route path='add-new-item' exact element={<AddNewItem /> } />
-                            </Routes>
                     {/* </div> */}
             </div>
     </Router>

@@ -5,6 +5,7 @@ import { TbLayoutCards } from 'react-icons/tb'
 import MainBody from '../../Common/Layout/MainBody/MainBody'
 import { MdOutlineSettingsAccessibility } from 'react-icons/md'
 import { RiPagesFill, RiSettingsLine } from 'react-icons/ri'
+import StaticSidebar from '../../Common/StaticSidebar/StaticSidebar'
 
 const DashboardUI = () => {
     const [toogleActive, setToogleActive] = useState()
@@ -13,6 +14,8 @@ const DashboardUI = () => {
 
   return (
     <MainBody>
+        {/* <StaticSidebar /> */}
+
         <div className="dashboard-main">
             <div className="header-dash" >
                 <h1>Welcome to your Premium Complete Customiziable Dashboard</h1>
