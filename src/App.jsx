@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
             <div className="top">
-                    <video src={videoBG} autoPlay muted loop/>
+                    {/* <video src={videoBG} autoPlay muted loop/> */}
             </div>
             <div className="main">
                     {/* { !toogleSidebar && */}

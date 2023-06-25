@@ -1,4 +1,4 @@
-p, h1, h2, h3, h4, h5, h6, label{
+p, h1, h2, h3, h4, h5, h6, label, b, a{
     margin: 0;
     letter-spacing: 1px;
     font-family: 'Raleway', sans-serif;
@@ -11,7 +11,8 @@ a{
 }
 *{
   --email-nav-height: 2.2rem;
-  --email-inbox-width: 21rem;
+  --email-body-nav-height: 4rem;
+  --email-inbox-width: 21.2rem;
 }
 #btn-icon{
   margin-right: 0.4rem;
