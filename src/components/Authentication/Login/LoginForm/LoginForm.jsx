@@ -23,7 +23,7 @@ const LoginForm = () => {
                     <span className="forget">Forgot Password?</span>
                 </div>
             </div>
-            <button>Sign In</button>
+            <button onClick={e => e.preventDefault()}>Sign In</button>
         </form>
         <p className="label-line">Don't have an account?</p>
     </div>

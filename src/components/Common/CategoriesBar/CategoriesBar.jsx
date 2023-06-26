@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AiFillCaretRight } from 'react-icons/ai'
+import Input from '../../Helpers/FormInput/Input'
 
 const CategoriesBar = ({ allData, returnData, isEmpty }) => {
     
@@ -71,7 +72,8 @@ const CategoriesBar = ({ allData, returnData, isEmpty }) => {
         </div>
         <div>
             <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
-            <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
+            <Input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
+            {/* <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/> */}
         </div>
     </div>
   )

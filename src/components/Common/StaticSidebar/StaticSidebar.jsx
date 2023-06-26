@@ -12,19 +12,58 @@ import { MdAccountBalance, MdEdit, MdEmail, MdTaskAlt } from "react-icons/md"
 import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SidebarOption } from './Options'
 import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
+import { atom, useRecoilState } from 'recoil'
 
-const StaticSidebar = ({ toogle, currentState }) => {
+const StaticSidebar = () => {
+
+    const charAtom = atom({
+        key:'toogleState',
+        default: false
+    })
+
+    const [toogleSidebar, setToogleSidebar] = useState(false)
+    const [toogleState, setToogleState] = useRecoilState(charAtom)
 
     const allToogleOff = () => {
         
     }
     
+    console.log("toogleState", toogleState);
     const setBackgroundTheme = (color) => {
         localStorage.setItem('mainDashTheme', color)
         window.location.reload()
     }
+     
+  var r = document.querySelector(':root');
+
+  // Create a function for getting a variable value
+  function myFunction_get() {
+    // Get the styles (properties and values) for the root
+    var rs = getComputedStyle(r);
+    console.log("adad", rs.getPropertyValue('--sidebar-width'));
+    // Alert the value of the --blue variable
+    // alert("The value of --blue is: " + rs.getPropertyValue('--sidebar-width'));
+  }
+  
+  console.log("myFunction_get", myFunction_get());
+  // Create a function for setting a variable value
+  function myFunction_set(property) {
+    // Set the value of variable --blue to another value (in this case "lightblue")
+    r.style.setProperty('--sidebar-width', property);
+  }
+
     const toogleHandler = () => {
-        toogle(!currentState)
+        setToogleSidebar(!toogleSidebar)
+        myFunction_get()
+        if(toogleSidebar){
+            setToogleState(false)
+            myFunction_set('19rem')
+            // localStorage.setItem('sidebarToogled', false)
+        } else {
+            setToogleState(true)
+            myFunction_set('70px')
+            // localStorage.setItem('sidebarToogled', true)
+        }
     }
 
     const [crntIndx, setCrntIndx] = useState(null)
@@ -45,12 +84,12 @@ const StaticSidebar = ({ toogle, currentState }) => {
     }
 
   return (
-    <div className={`static-sidebar ${currentState ? 'active' : ''}`}>
+    <div className={`static-sidebar ${toogleSidebar ? 'active' : ''}`}>
         <div className="profile">
             <div>
                 <div>
                     <img src={ Admin } alt="" />
-                    { currentState && <IoIosArrowBack id='toogle_icon' onClick={toogleHandler}/> }
+                    { toogleSidebar && <IoIosArrowBack id='toogle_icon' onClick={toogleHandler}/> }
                 </div>
                 <div>
                     <span>Good Day🤚</span>
@@ -63,22 +102,22 @@ const StaticSidebar = ({ toogle, currentState }) => {
         </div>
         <div className="section">
               <div className="head">
-                  <span>Menu { !currentState && <strong>: 6</strong>}</span>
+                  <span>Menu { !toogleSidebar && <strong>: 6</strong>}</span>
                   <span><BsFolderMinus id='toogle-all' onClick={allToogleOff}/></span>
               </div>
               {SidebarOption?.map((option, indx) =>
-                <div key={indx} className={`menu ${currentState ? 'active' : ''}`} onClick={() => optionChangeHandler(option, indx)}>
+                <div key={indx} className={`menu ${toogleSidebar ? 'active' : ''}`} onClick={() => optionChangeHandler(option, indx)}>
                 <Link to={option?.link} >
                     <div>
                         <div className={((toogleOption === activeOpt) && crntIndx === indx) ? 'selected_div' : 'non-selected'} />
                         <MdAccountBalance id='icon'/>
-                        { !currentState && <h4>{option.name}</h4> }
-                        { option?.nested?.length > 0 && !currentState && <BsFillArrowRightCircleFill id='drop_icon'/> }
+                        { !toogleSidebar && <h4>{option.name}</h4> }
+                        { option?.nested?.length > 0 && !toogleSidebar && <BsFillArrowRightCircleFill id='drop_icon'/> }
                     </div>
-                { currentState && <span className='quick_name'>{option.name}</span>}
+                { toogleSidebar && <span className='quick_name'>{option.name}</span>}
                 </Link>
                 {
-                    (toogleOption === option?.name) && open && !currentState && option?.nested?.length > 0 && option?.nested?.map((option, indx) =>  
+                    (toogleOption === option?.name) && open && !toogleSidebar && option?.nested?.length > 0 && option?.nested?.map((option, indx) =>  
                         <div className="children" key={indx}>
                             <Link to={option?.link}><h5>{option?.name}</h5></Link>
                         </div>
@@ -86,7 +125,7 @@ const StaticSidebar = ({ toogle, currentState }) => {
             </div>
               )}
         </div>
-        { !currentState && <div className="section">
+        { !toogleSidebar && <div className="section">
               <div className="head">
                     <span>Themes</span>
               </div>
@@ -97,7 +136,7 @@ const StaticSidebar = ({ toogle, currentState }) => {
                     <div className='color-theme light' onClick={() => setBackgroundTheme('light')}/>
               </div>
         </div> }
-        { !currentState && <div className="section">
+        { !toogleSidebar && <div className="section">
               <div className="head">
                   <span>Settings: <strong>6</strong></span>
                   <MdEdit />

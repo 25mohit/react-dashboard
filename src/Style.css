@@ -22,7 +22,7 @@
     transition: all 0.6s ease;
 }
 .static-sidebar.active{
-    width: 70px;
+    width: var(--sidebar-toogled-width);
     overflow: visible;
     /* background-color: rgb(253, 72, 72); */
 }
@@ -1606,7 +1606,7 @@
 }
 .login-form{
     background-color: white;
-    width: 35%;
+    width: 545px;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -1623,6 +1623,7 @@
 }
 .login-form .top h2{
     font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--color-primary);
 }
 .login-form > form {

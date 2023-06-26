@@ -1,8 +1,8 @@
 import './Style.css'
 import './Animation.css'
 import './App.css'
+import './Responsive.css'
 import './CheckBoxStyle.css'
-import { useEffect, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import StaticSidebar from './components/Common/StaticSidebar/StaticSidebar'
 import EmptyPage from './components/Common/EmptyPage/EmptyPage'
@@ -24,14 +24,16 @@ import CardsUI from './components/UI/DashboardUI/TabsUI/CardsUI'
 import MainRoutes from './Utils/Routes'
 
 function App() {
-  const [toogleSidebar, setToogleSidebar] = useState(false)
+//   const [toogleSidebar, setToogleSidebar] = useState(false)
 
   return (
     <Router>
             <div className="top">
                     <video src={videoBG} autoPlay muted loop/>
             </div>
-            <div className="main">
+            <div className="main">    
+                {/* <StaticSidebar /> */}
+
                 <MainRoutes />
                     {/* { !toogleSidebar && */}
                     {/* <div className={`sidebar-main ${toogleSidebar ? 'small' : 'big'}`}> */}

@@ -4,6 +4,7 @@ import logo from '../../../assets/Images/Extra/shop-logo.png'
 import { Link } from 'react-router-dom'
 import { RiDraftLine } from 'react-icons/ri'
 import { MdAddCircle, MdOutlineSell } from 'react-icons/md'
+import Input from '../../Helpers/FormInput/Input'
 
 const AddNewItem = () => {
     const [addMoreOption, setAddMoreOption] = useState([
@@ -19,7 +20,7 @@ const AddNewItem = () => {
         <div className="add-new-item">
             <div className="head">
                 <div>
-                    <img src={ logo } alt="" />
+                    {/* <img src={ logo } alt="" /> */}
                     <p>Adidas Premium</p>
                 </div>
                 <div>
@@ -28,8 +29,9 @@ const AddNewItem = () => {
             </div>
             <div className="container">
                 <div className="input-field-full">
-                    <label htmlFor="">Item Name</label>
-                    <input type="text" placeholder='Enter your Item Title'/>
+                    <Input  type="text" placeholder='Enter your Item Title'/>
+                    {/* <label htmlFor="">Item Name</label> */}
+                    {/* <input type="text" placeholder='Enter your Item Title'/> */}
                 </div>
                 <div className="input-field-half">
                     <div>
@@ -51,8 +53,7 @@ const AddNewItem = () => {
                 </div>
                 <div className="input-field-multi">
                     <div>
-                        <label htmlFor="">SKU</label>
-                        <input type="text" placeholder='Enter Custom SKU'/>
+                        <Input  type="text" placeholder='Enter custom SKU'/>
                     </div>
                     <div>
                         <label htmlFor="">Quantity</label>
@@ -87,8 +88,7 @@ const AddNewItem = () => {
                         </select>
                     </div>
                     <div>
-                        <label htmlFor="">Delivery Charges</label>
-                        <input type="text" placeholder='Enter Deliver Charges'/>
+                        <Input  type="text" placeholder='Delivery Charges'/>
                     </div>
                     <div>
                         <label htmlFor="">Fast Delivery</label>
@@ -114,7 +114,7 @@ const AddNewItem = () => {
                 <div className="input-field-full add-more">
                     <label htmlFor="">Enter Condition<MdAddCircle id='add-more' onClick={ addMoreRow }/></label>                   
                         { addMoreOption.map( (dt, indx) =>  <div>
-                            <input type="text" name={dt.name} placeholder={`Buying Condition Line ${indx+1}`}/></div> ) 
+                            <Input type="text" name={dt.name} placeholder={`Buying Condition Line ${indx+1}`}/></div> ) 
                         }
                     
                 </div>
