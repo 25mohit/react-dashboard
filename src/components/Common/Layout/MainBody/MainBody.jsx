@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import StaticSidebar from "../../StaticSidebar/StaticSidebar"
 import { atom, useRecoilState } from "recoil";
+import AuthWraper from "../../../../Utils/AuthWraper";
 
 const MainBody = props => {
   
   const charAtom = atom({
     key:'toogleState',
-    default: false
+    default: true
 })
 
 const [toogleState, setToogleState] = useRecoilState(charAtom)
@@ -29,12 +30,14 @@ myFunction_get()
 console.log("a7d8a7sd", toogleState, bodyWidth);
 
   return (
-    <div className={`body-main-ui `} >
-      <StaticSidebar />
-      <div className="body_container">
-        {props.children}
+    <AuthWraper>
+      <div className={`body-main-ui `} >
+        {/* <StaticSidebar /> */}
+        <div className="body_container">
+          {props.children}
+        </div>
       </div>
-    </div>
+    </AuthWraper>
   )
 }
 

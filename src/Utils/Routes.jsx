@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import EmptyPage from '../components/Common/EmptyPage/EmptyPage'
+
 // import DashboardUI from '../components/UI/DashboardUI/DashboardUI'
 // import HomeUI from '../components/UI/DashboardUI/TabsUI/HomeUI'
 // import PagesUI from '../components/UI/DashboardUI/TabsUI/PagesUI'
@@ -15,8 +16,9 @@ import EmptyPage from '../components/Common/EmptyPage/EmptyPage'
 // import EmailUI from '../components/UI/EmailUI/EmailUI'
 // import AddNewItem from '../components/UI/AddNewItemUI/AddNewItemUI'
 // import Login from '../components/Authentication/Login/Login'
-import LoginType1 from '../components/Authentication/Login/Types/LoginType1/LoginType1'
+import Login from '../components/Authentication/Login/Types/LoginType1/LoginType1'
 import { lazy, Suspense } from 'react'
+import LoadingScreen from '../components/Helpers/SuspenceLoader/LoadingScreen'
 
 const MainRoutes = () => {
         const DashboardUI = lazy(() => import('../components/UI/DashboardUI/DashboardUI'))
@@ -36,10 +38,10 @@ const MainRoutes = () => {
         const AddNewItem = lazy(() => import('../components/UI/AddNewItemUI/AddNewItemUI'))
 
   return (
-        <Suspense fallback={<h1>Hello</h1>}>
+        <Suspense fallback={<LoadingScreen />}>
                 <Routes>
                         <Route path='/' element={<EmptyPage />} />
-                        <Route path='login' element={<LoginType1 />} />
+                        <Route path='login' element={<Login />} />
                         <Route path='dashboard' element={<DashboardUI />} >
                                 <Route path='home' element={<HomeUI />}/>
                                 <Route path='pages' element={<PagesUI />}/>

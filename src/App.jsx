@@ -22,17 +22,22 @@ import UsersSetting from './components/UI/DashboardUI/TabsUI/UsersSetting'
 import EmailUI from './components/UI/EmailUI/EmailUI'
 import CardsUI from './components/UI/DashboardUI/TabsUI/CardsUI'
 import MainRoutes from './Utils/Routes'
+import { useState } from 'react'
+import AuthWraper from './Utils/AuthWraper'
 
 function App() {
 //   const [toogleSidebar, setToogleSidebar] = useState(false)
+
 
   return (
     <Router>
             <div className="top">
                     <video src={videoBG} autoPlay muted loop/>
             </div>
-            <div className="main">    
-                {/* <StaticSidebar /> */}
+            <div className="main">
+                <AuthWraper>
+                        <StaticSidebar />
+                </AuthWraper>    
 
                 <MainRoutes />
                     {/* { !toogleSidebar && */}

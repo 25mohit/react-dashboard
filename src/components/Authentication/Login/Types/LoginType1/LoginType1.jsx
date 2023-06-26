@@ -5,7 +5,7 @@ import LoginForm from '../../LoginForm/LoginForm'
 const LoginType1 = () => {
   return (
     <AuthServiceContainer>
-        <LoginForm />
+          <LoginForm />
     </AuthServiceContainer>
   )
 }

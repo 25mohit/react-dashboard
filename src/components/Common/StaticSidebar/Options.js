@@ -1,11 +1,11 @@
 export const SidebarOption = [
     {
-        link: 'dashboard/home',
+        link: '/dashboard/home',
         name: 'Dashboard',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'sales/orders',
+        link: '/sales/orders',
         name: 'Orders',
         icon: 'fa-solid fa-bars',
         nested: [
@@ -24,12 +24,12 @@ export const SidebarOption = [
         ]
     },
     {
-        link: 'notification',
+        link: '/notification',
         name: 'Notification',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'items/listed-item',
+        link: '/items/listed-item',
         name: 'Items',
         icon: 'fa-solid fa-bars',
         nested: [
@@ -52,32 +52,32 @@ export const SidebarOption = [
         ]
     },
     {
-        link: 'message',
+        link: '/message',
         name: 'Message',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'email',
+        link: '/email',
         name: 'Email',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'sales',
+        link: '/sales',
         name: 'Sales',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'tasks',
+        link: '/tasks',
         name: 'Tasks',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'users',
+        link: '/users',
         name: 'Users',
         icon: 'fa-solid fa-bars'
     },
     {
-        link: 'account',
+        link: '/account',
         name: 'Account',
         icon: 'fa-solid fa-bars'
     },

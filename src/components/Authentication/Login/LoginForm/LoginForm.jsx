@@ -1,7 +1,17 @@
 import React from 'react'
 import Input from '../../../Helpers/FormInput/Input'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
+
+    const navigate = useNavigate()
+
+    const onSignInHandler = e => {
+        e.preventDefault()
+        localStorage.setItem('isUserLoggedIn', true)
+        navigate('/dashboard/home')
+    }
+
   return (
     <div className='login-form'>
         <div className='top'>
@@ -23,7 +33,7 @@ const LoginForm = () => {
                     <span className="forget">Forgot Password?</span>
                 </div>
             </div>
-            <button onClick={e => e.preventDefault()}>Sign In</button>
+            <button onClick={onSignInHandler}>Sign In</button>
         </form>
         <p className="label-line">Don't have an account?</p>
     </div>
