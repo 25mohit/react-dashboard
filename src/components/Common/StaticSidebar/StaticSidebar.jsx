@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FiSlack } from "react-icons/fi"
 // import { GoSettings } from "react-icons/go"
 import { IoSettings } from "react-icons/io5";
@@ -11,7 +11,7 @@ import { FaBell, FaBoxOpen, FaBoxes, FaStickyNote, FaUserAlt, FaUserAstronaut } 
 import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
 import { MdAccountBalance, MdEdit, MdEmail, MdMarkEmailUnread, MdOutlineAccountBalance, MdTaskAlt } from "react-icons/md"
-import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
+import { RiDashboardFill, RiLogoutCircleRFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SidebarOption } from './Options'
 import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 import { atom, useRecoilState } from 'recoil'
@@ -41,6 +41,8 @@ const StaticSidebar = () => {
 
     const [toogleSidebar, setToogleSidebar] = useState(false)
     const [toogleState, setToogleState] = useRecoilState(charAtom)
+
+    const navigate = useNavigate()
 
     const allToogleOff = () => {
         
@@ -101,6 +103,13 @@ const StaticSidebar = () => {
         setCrntIndx(ind)
     }
 
+    const logoutUser = () => {
+        localStorage.clear()
+        navigate('/login')
+        window.location.reload()
+    }
+
+    console.log("setToogleSidebar", toogleSidebar);
   return (
     <div className={`static-sidebar ${toogleSidebar ? 'active' : ''}`}>
         <div className="profile">
@@ -121,7 +130,7 @@ const StaticSidebar = () => {
         <div className="section">
               <div className="head">
                   <span>Menu { !toogleSidebar && <strong>: 6</strong>}</span>
-                  <span><BsFolderMinus id='toogle-all' onClick={allToogleOff}/></span>
+                  {/* <span><BsFolderMinus id='toogle-all' onClick={allToogleOff}/></span> */}
               </div>
               {SidebarOption?.map((option, indx) =>
                 <div key={indx} className={`menu ${toogleSidebar ? 'active' : ''}`} onClick={() => optionChangeHandler(option, indx)}>
@@ -167,7 +176,7 @@ const StaticSidebar = () => {
                   <div><FaUserAlt /></div>
                   <div><IoSettings /></div>
                   <div><AiFillPieChart /></div>
-                  <div><RiSettings4Fill /></div>
+                  <div><RiLogoutCircleRFill onClick={logoutUser}/></div>
                   <div><AiFillBulb /></div>
               </div>
         </div> }
