@@ -7,7 +7,7 @@ export const SidebarOption = [
     {
         link: '/sales/orders',
         name: 'Orders',
-        icon: 'fa-solid fa-bars',
+        icon: 'fa-solid fa-cubes',
         nested: [
             {
                 link: '/sales/orders',

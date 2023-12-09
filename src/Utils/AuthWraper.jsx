@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { atom, useRecoilState } from "recoil"
 
 const AuthWraper = props => {
     const { children } = props
@@ -8,9 +7,10 @@ const AuthWraper = props => {
 
     useEffect(() => {
       setIsLoggedIn(Boolean(localStorage.getItem('isUserLoggedIn')))
+     
     },[])
     
-    console.log("isLoggedIn", typeof(isLoggedIn), isLoggedIn);
+    console.log("isLoggedIn23", typeof(isLoggedIn), isLoggedIn);
   return (
     <>
         {

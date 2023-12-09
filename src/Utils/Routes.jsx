@@ -1,23 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
-import EmptyPage from '../components/Common/EmptyPage/EmptyPage'
-
-// import DashboardUI from '../components/UI/DashboardUI/DashboardUI'
-// import HomeUI from '../components/UI/DashboardUI/TabsUI/HomeUI'
-// import PagesUI from '../components/UI/DashboardUI/TabsUI/PagesUI'
-// import CardsUI from '../components/UI/DashboardUI/TabsUI/CardsUI'
-// import QuickSettings from '../components/UI/DashboardUI/TabsUI/QuickSettings'
-// import UsersSetting from '../components/UI/DashboardUI/TabsUI/UsersSetting'
-// import OrdersUI from '../components/UI/SalesUI/OrdersUI'
-// import ListedUI from '../components/UI/ItemsUI/ListedUI'
-// import DraftUI from '../components/UI/ItemsUI/DraftUI'
-// import ScheduledUI from '../components/UI/ItemsUI/ScheduledUI'
-// import UnsoldUI from '../components/UI/ItemsUI/UnsoldUI'
-// import MessageUI from '../components/UI/MessageUI/MessageUI'
-// import EmailUI from '../components/UI/EmailUI/EmailUI'
-// import AddNewItem from '../components/UI/AddNewItemUI/AddNewItemUI'
-// import Login from '../components/Authentication/Login/Login'
 import Login from '../components/Authentication/Login/Types/LoginType1/LoginType1'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import LoadingScreen from '../components/Helpers/SuspenceLoader/LoadingScreen'
 
 const MainRoutes = () => {
@@ -36,6 +20,15 @@ const MainRoutes = () => {
         const MessageUI = lazy(() => import('../components/UI/MessageUI/MessageUI'))
         const EmailUI = lazy(() => import('../components/UI/EmailUI/EmailUI'))
         const AddNewItem = lazy(() => import('../components/UI/AddNewItemUI/AddNewItemUI'))
+
+        const navigate = useNavigate()
+
+        useEffect(() => {
+                const isLoggedIn = Boolean(localStorage.getItem('isUserLoggedIn'))
+                if(!isLoggedIn){
+                        navigate('/login')
+                }
+        },[])
 
   return (
         <Suspense fallback={<LoadingScreen />}>

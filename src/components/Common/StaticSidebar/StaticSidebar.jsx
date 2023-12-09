@@ -1,21 +1,39 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FiSlack } from "react-icons/fi"
-import { GoSettings } from "react-icons/go"
+// import { GoSettings } from "react-icons/go"
+import { IoSettings } from "react-icons/io5";
+
 import { HiUserGroup } from "react-icons/hi"
 import { SiJirasoftware } from "react-icons/si"
 import { IoIosArrowBack } from "react-icons/io"
-import { FaStickyNote, FaUserAlt } from "react-icons/fa"
+import { FaBell, FaBoxOpen, FaBoxes, FaStickyNote, FaUserAlt, FaUserAstronaut } from "react-icons/fa"
 import { AiFillBulb, AiFillPieChart } from "react-icons/ai"
 import Admin from '../../../assets/Images/Admin/AdminLogo.jpg'
-import { MdAccountBalance, MdEdit, MdEmail, MdTaskAlt } from "react-icons/md"
+import { MdAccountBalance, MdEdit, MdEmail, MdMarkEmailUnread, MdOutlineAccountBalance, MdTaskAlt } from "react-icons/md"
 import { RiDashboardFill, RiMessage2Fill, RiSettings4Fill } from "react-icons/ri"
 import { SidebarOption } from './Options'
 import { BsBell, BsFillArrowDownCircleFill, BsFillArrowRightCircleFill, BsFillHandbagFill, BsFolderMinus, BsGraphUp, BsListTask, BsPatchPlusFill, BsShop } from "react-icons/bs"
 import { atom, useRecoilState } from 'recoil'
+import { FaHome } from "react-icons/fa";
+import { FaMessage } from "react-icons/fa6";
+import { BiSolidOffer } from 'react-icons/bi';
+import { GoTasklist } from "react-icons/go";
 
 const StaticSidebar = () => {
 
+    const icons = [
+        {name: 'Dashboard', icon: <FaHome id='icon'/>},
+        {name: 'Orders', icon: <FaBoxOpen  id='icon'/>},
+        {name: 'Notification', icon: <FaBell id='icon'/>},
+        {name: 'Items', icon: <FaBoxes id='icon'/>},
+        {name: 'Message', icon: <FaMessage id='icon'/>},
+        {name: 'Email', icon: <MdMarkEmailUnread  id='icon'/>},
+        {name: 'Sales', icon: <BiSolidOffer  id='icon'/>},
+        {name: 'Tasks', icon: <GoTasklist  id='icon'/>},
+        {name: 'Users', icon: <FaUserAstronaut  id='icon'/>},
+        {name: 'Account', icon: <MdOutlineAccountBalance  id='icon'/>},
+    ]
     const charAtom = atom({
         key:'toogleState',
         default: false
@@ -110,7 +128,10 @@ const StaticSidebar = () => {
                 <Link to={option?.link} >
                     <div>
                         <div className={((toogleOption === activeOpt) && crntIndx === indx) ? 'selected_div' : 'non-selected'} />
-                        <MdAccountBalance id='icon'/>
+                        {/* <MdAccountBalance id='icon'/> */}
+                        {icons?.filter(d => d.name === option.name)?.[0]?.icon}
+                        <i class={option?.icon} id='icon'></i>
+                        
                         { !toogleSidebar && <h4>{option.name}</h4> }
                         { option?.nested?.length > 0 && !toogleSidebar && <BsFillArrowRightCircleFill id='drop_icon'/> }
                     </div>
@@ -144,7 +165,7 @@ const StaticSidebar = () => {
               <div className="card settings">
                   <div><FaStickyNote /></div>
                   <div><FaUserAlt /></div>
-                  <div><GoSettings /></div>
+                  <div><IoSettings /></div>
                   <div><AiFillPieChart /></div>
                   <div><RiSettings4Fill /></div>
                   <div><AiFillBulb /></div>

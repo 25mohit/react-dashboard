@@ -10,6 +10,7 @@ const LoginForm = () => {
         e.preventDefault()
         localStorage.setItem('isUserLoggedIn', true)
         navigate('/dashboard/home')
+        window.location.reload()
     }
 
   return (

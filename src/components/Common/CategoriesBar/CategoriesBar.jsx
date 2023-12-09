@@ -66,15 +66,14 @@ const CategoriesBar = ({ allData, returnData, isEmpty }) => {
 
   return (
     <div className="categories-bar">
-        <div>
+        <div className='options-toogle'>
             <span className={`${ catType == null ? 'active' : ''} toogle`} onClick={showAll}>All { catType == null && searchFiltered.length }</span>
             { uniqueCategory?.map( (category, indx) => <span key={indx} className={`${indx === catType ? 'active' : ''} toogle`} onClick={() => getCategoryType(indx, category)}>{getCategory(category)} {indx===catType && searchFiltered?.length}</span> )}
         </div>
-        <div>
+        {/* <div className='search-fd'>
             <div className="shadow-div" ><span><AiFillCaretRight /></span></div>
             <Input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/>
-            {/* <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder='Enter something to Search !'/> */}
-        </div>
+        </div> */}
     </div>
   )
 }
